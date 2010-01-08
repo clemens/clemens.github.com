@@ -19,7 +19,7 @@ title: Portfolio
         </p>
       </li>
       <li>
-        <a href="http://bezirk-mödling.at"><img src="/images/portfolio/teaser/bezirk-moedling.png" alt="" /></a>
+        <a href="http://bezirk-mödling.at"><img src="/images/portfolio/teaser/bezirkmoedling.png" alt="" /></a>
         <h4>bezirk-mödling.at</h4>
         <p>
           "bezirk-mödling.at":http://bezirk-mödling.at is an event presentation platform for a district in Lower Austria.
