@@ -1,0 +1,44 @@
+---
+title: Don't Let Implementation Issues Affect User Experience
+layout: post
+permalink: /articles/2009/02/07/dont-let-implementation-issues-affect-user-experience
+year: 2009
+---
+
+Gregg Pollack of "RailsEnvy":http://railsenvy.com recently started a series on "Scaling Rails":http://railslab.newrelic.com/scaling-rails over at NewRelic's "RailsLab":http://railslab.newrelic.com. Although I highly recommend watching these screencasts, Gregg says something in "episode #5":http://railslab.newrelic.com/2009/02/05/episode-5-advanced-page-caching that got my attention: He says that login and logout as well as some information about the login status (the omnipresent "Logged in as Clemens") are *overrated*.
+
+h3. ... Or Are They?
+
+Although I often tend to agree with Gregg I think here's a subject that's a bit touchy with me - or rather, it scratches an itch that I've been scratching a lot over the last few months and let me tell you - it's already pretty sore. But let me explain.
+
+Login/logout links/buttons as well as a certain type of login status are used to indicate to the user whether or not they are logged in to the site. And if they aren't then the site usually provides some kind of guidance on how to log in or create a new account plus an incentive why a user should sign up.
+
+Now if we are fortunate enough to create a site for a certain geeky clientele - say, GitHub - we can safely assume that we're dealing with users who can be trusted to have a certain level of experience with the Internet in general and websites (with account functionality) in particular. However, this type of homogenous target group cannot always safely be assumed. We live in a time where Internet usage increases by the day and not only do we get children and adolescents looking at our websites, we also get middle-aged users. And these middle-aged users might have grown up without ever touching a computer and the Internet and - even worse - might be slightly inept and untalented, too.
+
+h3. Fear Of The Unknown
+
+Now imagine for a second that you've been using the Internet for a couple of days and you come to a website that has a link "Your Account". I guess I'd close the site as soon as I see this text. Why? With all the paranoia created by the media about Internet security - phishing, dubious e-mails, trojans and the like - I'd be hesitant to trust a site where I have an account with signing up for one.
+
+It's just about as frightning as this hoax years back that allowed you to list folders from your local hard drive in Internet Explorer ("Your computer isn't safe. Look, we can easily access your hard drive") - the main difference is, we as developers usually don't have these bad intentions, but sometimes we're just a bit ignorant about our users' expectations. And we forget that it's only human to have a certain fear of the unknown. I, as an experienced user, know (or at least assume) that if I click on that link without being logged in and/or actually owning an account I'd probably be redirected to a login prompt or a registration form. The unexperienced user however is more likely to see a threat, especially if they are on an e-commerce site and maybe even trying online shopping for the first time.
+
+h3. If You Are Uncertain, Always Expect The Worst
+
+Often times, we developers just don't know enough about the future users of our apps - maybe we don't even know anything at all. They key then is to expect the worst: 100% of our future users are going to be complete idiots who are inept, inexperienced and paranoid all at the same time. It is our job (and the designer's and the usability expert's) to build a comfy website for them that explains everything that might seem totally superfluous from our point of view. Believe me, I've been at the point where I clearly labeled a button "Buy Now" and had to come back after some customer feedback and add an info text that said "Click on the 'Buy Now' button to buy the products you selected" because some users wouldn't understand how to finalize their order.
+
+h3. Page Caching With Dynamic Content
+
+Gregg talked about these issues when dealing with page caching. If you've tried to efficiently implement page caching for a site with a certain amount of dynamic features I bet you've run into all kinds of issues because it's just really damn hard - and pretty much impossible if you also want your page to degrade gracefully for users with JavaScript and/or Cookies blocked.
+
+One way to get around these problems is to remove everything dynamic from the layout and consolidate dynamic stuff in selected places that aren't page cached, such as a dashboard. As I mentioned above, this might be OK for experienced users but as soon as you're dealing with a heterogenous group of users, you just shouldn't do it.
+
+h3. It's Not Fair To Ask The Value Question If You're Dealing With Implementation Details
+
+This is probably the place where my pal "Sven Fuchs":http://www.artweb-design.de would chime in and say we'd have to ask the customer if they'd rather reduce their server load and use page caching or have their highly dynamic and gracefully degrading interface. To be honest, I think this question just isn't fair to the client because even if we're talking to a technical or semi-technical client, we should refrain from bothering them with implementation details.
+
+Usually - if the design is developed first -, a certain layout will have been agreed upon. With good reason: It's a designer's suggestions (who hopefully has at least some experience when it comes to usability) that integrates what the client wants. It is then our job as developers not to point out to the client how they could reduce server load/improve performance and save a few bucks a month but instead it's our job to implement the design we got as efficiently as possible. If this, due to a heavily dynamic interface, rules out page caching and forces us to fall back on fragment caching - so be it.
+
+h3. You Are Allowed To Criticize
+
+That doesn't mean, of course, that we have to accept every design that is given to us without taking a moment to consider the options and maybe give the client and/or the designer some feedback. For example, there might be some kind of information website that really only has a forum when it comes to dynamic features but for some weird reason the designer has put the "Logged in as Clemens" stuff in every layout which effectively denies the use of page caching for areas of the site where it would actually make sense without affecting the user experience. This is where we should raise discussion. But again, avoid the implementation details and instead talk about leaving out that right menu for 90% of the pages and having more space for the actual content because this is a point the customer understands independent of their technical knowledge.
+
+That being said, I still very much recommend watching Gregg's screencasts and subscribing to the RSS feed - there are some really interesting topics coming up and Gregg is just a very good teacher.

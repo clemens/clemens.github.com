@@ -1,0 +1,81 @@
+---
+layout: default
+title: About
+---
+
+<div id="cv" class="box large">
+  <div class="content_wrapper">
+    <h2>Clemens Kofler - Curriculum Vitae</h2>
+    <div>
+      <img align="left" src="http://gravatar.com/avatar/5976001c9ebf095c4988855a4e102de5?s=200" alt="Clemens Kofler" style="margin-right:10px; margin-bottom:10px;" />
+      <h3>General</h3>
+      <ul>
+        <li>Born on 21 May 1986 in Hall in Tirol, Austria</li>
+        <li>Currently living in Berlin, Germany</li>
+      </ul>
+
+      <h3>Professional experience</h3>
+      <ul>
+        <li>
+          <h4>railway</h4>
+          <p class="description">Web developer and consultant (freelancer)</p>
+          <p class="date">since April 2007</p>
+        </li>
+        <li>
+          <h4>Allianz Insurance</h4>
+          <p class="description">Intern CRM/Marketing (part of university degree)</p>
+          <p class="date">September 2007 - February 2008</p>
+        </li>
+        <li>
+          <h4>Freelancer</h4>
+          <p class="description">Web developer and consultant</p>
+          <p class="date">August 2005 - April 2007</p>
+        </li>
+        <li>
+          <h4>Management Center Innsbruck</h4>
+          <p class="description">Tutor for Java, PHP, database design and database programming</p>
+          <p class="date">January 2005 - January 2007</p>
+        </li>
+        <li>
+          <h4>Various companies</h4>
+          <p class="description">Web developer (short-term employment basis)</p>
+          <p class="date">2002 - August 2005</p>
+        </li>
+      </ul>
+
+      <h3>Education</h3>
+      <ul>
+        <li>
+          <h4>Management Center Innsbruck, Austria</h4>
+          <p class="description">Magister (FH) diploma degree in Management & Applied Informatics</p>
+          <p class="date">2004 - 2008</p>
+        </li>
+        <li>
+          <h4>University of Queensland, Australia</h4>
+          <p class="description">Study Abroad Exchange Semester (courses: International Journalism, Social Psychology, Leadership, Integrated Marketing)</p>
+          <p class="date">February 2007 - July 2007</p>
+        </li>
+        <li>
+          <h4>Franziskaner Gymnasium Hall in Tirol, Austria</h4>
+          <p class="description">High school graduate</p>
+          <p class="date">1996 - 2004</p>
+        </li>
+      </ul>
+
+      <h3>Conference talks</h3>
+      <ul>
+        <li>
+          <h4>Rails I18n From The Trenches</h4>
+          <p class="description">Presentation about the state of things in Rails i18n and the most important plugins in the Rails i18n ecosystem.</p>
+          <p class="date">Rails Underground, London, July 2009</p>
+          <p>
+            Resources:
+            <a href="http://www.slideshare.net/clemensk/rails-i18n-from-the-trenches">Slides</a> |
+            <a href="http://skillsmatter.com/podcast/ajax-ria/clemens-kof-rails-i18n-from-the-trenches">Video</a> |
+            <a href="http://speakerrate.com/talks/1275-rails-i18n-from-the-trenches">SpeakerRate</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

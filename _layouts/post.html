@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div class="content_box span-24">
+  <div class="content_wrapper">
+    <h2 class="title"><a href="{{ post.url }}">{{ page.title }}</a></h2>
+
+    <div class="author">
+      <abbr class="published" title="{{ post.date }}">{{ post.date | date: '%d %B %Y' }}</abbr>
+    </div>
+
+    <div class="content">
+      {{ content }}
+    </div>
+  </div>
+</div>
