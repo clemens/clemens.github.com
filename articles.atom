@@ -5,10 +5,10 @@ layout: nil
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>railway.at</title>
- <link href="http://railway.at/atom.xml" rel="self"/>
- <link href="http://railway.at/"/>
+ <link href="http://www.railway.at/atom.xml" rel="self"/>
+ <link href="http://www.railway.at/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://railway.at/</id>
+ <id>http://www.railway.at/</id>
  <author>
    <name>Clemens Kofler</name>
    <email>clemens@railway.at</email>
@@ -17,10 +17,10 @@ layout: nil
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://railway.at{{ post.url }}"/>
+   <link href="http://www.railway.at{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://railway.at{{ post.id }}</id>
-   <content type="html">{{ post.content | xml_escape }}</content>
+   <id>http://www.railway.at{{ post.id }}</id>
+   <content type="html">{{ post.content | truncate_words:50 | xml_escape }}</content>
  </entry>
  {% endfor %}
  
