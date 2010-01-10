@@ -53,14 +53,12 @@ title: Home
 </div>
 
 <div id="archive" class="content_box span-24">
-  {{ assign posts_counter = 0 }}
   <div class="content_wrapper">
     <h2>Archive</h2>
     <h3>2010</h3>
     <ul>
       {% for post in site.posts %}
         {% if post.year == 2010 %}
-          {{ posts_counter += 1 }}
           <li><span>{{ post.date | date: "%d.%m." }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endif %}
       {% endfor %}
@@ -69,19 +67,17 @@ title: Home
     <ul>
       {% for post in site.posts %}
         {% if post.year == 2009 %}
-          {{ posts_counter += 1 }}
           <li><span>{{ post.date | date: "%d.%m." }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endif %}
       {% endfor %}
     </ul>
     <h3>2008</h3>
     <ul>
-      {% for post in site.posts limit:5 offset:posts_counter %}
+      {% for post in site.posts %}
         {% if post.year == 2008 %}
           <li><span>{{ post.date | date: "%d.%m." }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endif %}
       {% endfor %}
-      And <a href="/2008.html">{{ site.posts.size - 5 }} more articles</a>.
     </ul>
   </div>
 </div>
