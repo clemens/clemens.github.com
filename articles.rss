@@ -14,7 +14,7 @@ layout: nil
     <item>
       <title>{{ post.title }}</title>
       <link>http://www.railway.at{{ post.url }}</link>
-      <pubDate>{{ post.date | date_to_xmlschema }}</updated>
+      <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
       <guid>http://www.railway.at{{ post.id }}</guid>
       <description>{{ post.content | truncate_words:50 | xml_escape }}</description>
     </item>
