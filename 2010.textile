@@ -1,0 +1,12 @@
+<div id="archive" class="content_box span-24">
+  <div class="content_wrapper">
+    <h2>Archive 2010</h2>
+    <ul>
+      {% for post in site.posts %}
+        {% if post.year == 2010 %}
+          <li><span>{{ post.date | date: "%d.%m." }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
