@@ -123,6 +123,12 @@ a:hover, a:active {
   font-size: 1.2em;
 }
 
+#archive h3 {
+  font-color: #000;
+  font-weight: bold;
+  font-size: 1em;
+}
+
 .content_box h4 {
   font-weight: bold;
 }

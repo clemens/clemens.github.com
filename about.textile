@@ -27,7 +27,7 @@ title: About
 
     <h3>Who is behind railway?</h3>
 
-    <h3>Clemens Kofler</h3>
+    <h4>Clemens Kofler</h4>
 
     <img align="left" src="http://gravatar.com/avatar/5976001c9ebf095c4988855a4e102de5?s=200" alt="Clemens Kofler" style="margin-right:10px; margin-bottom:10px;" />
 
