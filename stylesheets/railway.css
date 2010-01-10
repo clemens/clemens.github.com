@@ -205,7 +205,7 @@ blockquote {
 }
 
 /* box heights */
-#latest_posts .content_wrapper, #tweets .content_wrapper {
+#latest_posts .content_wrapper, #twitter .content_wrapper {
   height: 180px;
 }
 
