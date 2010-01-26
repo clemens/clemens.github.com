@@ -11,37 +11,37 @@ Imagine your layout contains a &lt;div id="sidebar"&gt; where you want different
 
 Instead of using content_for(:side) in every template, I'd suggest extracting that bit in a helper method and put in in your ApplicationHelper module like that:
 
-<pre>
+{% highlight ruby %}
 def sidebar(&block)
   content_for(:sidebar, &block)
 end
-</pre>
+{% endhighlight %}
 
 After that, you can just call the newly created helper method in your views:
 
-<pre>
+{% highlight ruby %}
 <% sidebar do %>
 This goes in the sidebar!
 <% end %>
-</pre>
+{% endhighlight %}
 
 This approach also gives you the opportunity to include some logic in the helper. Consider the possibility of showing an admin area as a part of the page if (and only if) the user has admin privileges. In one of my projects, I used something the following code:
 
-<pre>
+{% highlight ruby %}
 def admin_area(section='', &block)
   if self.current_user.admin?
     concat(content_tag(:h2, "#{section.humanize} Admin", :class => "admin_options"), block.binding)
     concat(content_tag(:div, capture(&block), :class => "admin_options"), block.binding)
   end
 end
-</pre>
+{% endhighlight %}
 
 In the views, it looks like this:
 
-<pre>
+{% highlight ruby %}
 <% admin_area('forum') do %>
 ... display the admin area ...
 <% end %>
-</pre>
+{% endhighlight %}
 
 This way, you keep logic out of the view so it stays nice and clean.
