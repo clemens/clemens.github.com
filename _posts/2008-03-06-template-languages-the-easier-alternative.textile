@@ -19,7 +19,11 @@ Performance is yet another concern: Template languages need to be parsed which w
 
 And if this isn't enough already, you may just ask yourself: What is *really* the big difference between these two:
 
-<pre><code><h2>My Title</h2>
-h2 "My Title"</code></pre>
+{% highlight html %}
+  <h2>My Title</h2>
+{% endhighlight %}
+{% highlight ruby %}
+  h2 "My Title"
+{% endhighlight %}
 
 It's subtle, isn't it?
