@@ -66,12 +66,12 @@ h3. View specs
 
 What about view specs? These tend to be a lot shorter. They usually "mock" the controller by assigning some instance variables in the _before_ block and then test for the presence of certain HTML tags and structures. Most people ("Geoffrey Grosenbach":http://peepcode.com/products/rspec-controllers-and-tools among others) seem to agree that view specs makes sense as long as they don't get too specific. Geoffrey mentions in his screencast that he usually only tests for things that really *matter*: If there needs to be a form on a page (e.g. the _new_ template), you should check that it is present and maybe also check that all the fields are there:
 
-<pre>
+{% highlight ruby %}
 response.should have_tag("form[action=?][method=post]", products_path) do
   with_tag("input#product_name[name=?]", "product[name]")
   with_tag("textarea#product_description[name=?]", "product[description]")
 end
-</pre>
+{% endhighlight %}
 
 What if we want to spec our AJAX stuff? rspec provides us with the _have_rjs_ matcher that basically wraps Rails' _assert_select_rjs_. If you've ever worked with assert_select_rjs, you know that everything quickly gets out of hand, especially if a certain AJAX call updates multiple elements on the page.
 
@@ -100,13 +100,13 @@ h3. Check how well your code is covered with rcov
 Finally, I'd like to recommend a tool that can be quite useful: *rcov*. rcov basically tests how well your code is covered by your specs or tests. It executes all specs/tests and analyzes which lines have been executed and which haven't. It then creates some neat HTML documents that tell you exactly how well your code is covered by your specs/tests and highlight the areas of your code that haven't been executed. Install the gem by typing
 
 <pre>
-gem install rcov
+$ gem install rcov
 </pre>
 
 You can then run it using the following command:
 
 <pre>
-rake spec:rcov
+$ rake spec:rcov
 </pre>
 
 This generates (or updates) a directory named "coverage" in your application's directory, containing multiple HTML files. Just open the _index.html_ in your browser of choice and take a look at the output.
