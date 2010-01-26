@@ -17,9 +17,9 @@ In databases, joins are used to link multiple tables of a database together so t
 
 * First of all, every database query is a - comparatively - time consuming operation. More often than not, you'll find that reducing the number of queries in your application will give you a major performance increase. This is basically what Rails' eager loading is all about:
 
-<pre>
+{% highlight ruby %}
 Person.find(:all, :include => :addresses)
-</pre>
+{% endhighlight %}
 
 This loads all people including their addresses in just one query.
 
@@ -33,9 +33,9 @@ The probably more common way to join tables is the so-called *INNER JOIN*. INNER
 
 Let's take another look at the people/addresses example I mentioned earlier and assume that there's two people, George (id = 1) and Alice (id = 2). George has one address (i.e. there is one row in the _addresses_ table with a person_id = 1) and Alice has two addresses. Let's join them using an INNER JOIN:
 
-<pre>
+{% highlight mysql %}
 SELECT * FROM people INNER JOIN addresses ON addresses.person_id = people.id
-</pre>
+{% endhighlight %}
 
 This will output a set of three rows - one for George and two for Alice. The set includes all rows where the join condition (_ON addresses.person_id = people.id_) matches.
 
@@ -43,9 +43,9 @@ Now we add a third person, Bill, who doesn't have an address. If we run our quer
 
 Note that the order in which you're joining the tables doesn't make any difference with inner joins. You could write the following and the result would be the same:
 
-<pre>
+{% highlight mysql %}
 SELECT * FROM addresses INNER JOIN people ON addresses.person_id = people.id
-</pre>
+{% endhighlight %}
 
 h4. OUTER JOINs
 
@@ -66,9 +66,9 @@ h3. Indexes
 
 Indexes (aka keys) are used to index records (who would have thought that?!). Basically, using indexes can result in an enormous performance boost if the indexes are applied correctly, because they help the database server to find the desired results more efficiently. This can be achieved because without an index, databases usually perform what is called a full table scan. Consider the following query:
 
-<pre>
+{% highlight mysql %}
 SELECT * FROM people WHERE last_name = "Smith"
-</pre>
+{% endhighlight %}
 
 If there is no index on the _last_name_ field, the database will go through the whole table and filter every record with a last_name value of "Smith". While this is not a problem with only a few hundred records, it quickly gets inefficient if you have multiple thousand records stored in the table. An index, in this case, will build a kind of _virtual table_ that is ordered by last_name. When the database is queried like above, it will find go in an search till it finds the first occurrence of "Smith" and selects all records till it finds the first record where last_name doesn't equal "Smith". Obviously, this can save a lot of time.
 
