@@ -11,7 +11,7 @@ h3. The Stumbling Block
 
 A few days ago when I tried to implement the i18n functionality for Rails' Date and Time classes I stumbled across an interesting part in the i18n source or, to be more specific, in the "simple backend's":http://github.com/svenfuchs/i18n/tree/master/lib/i18n/backend/simple.rb _localize_ method:
 
-<pre>
+{% highlight ruby %}
 def localize(locale, object, format = :default)
   raise ArgumentError, "Object must be a Date, DateTime or Time object. #{object.inspect} given." unless object.respond_to?(:strftime)
   
@@ -28,7 +28,7 @@ def localize(locale, object, format = :default)
   format.gsub!(/%p/, translate(locale, :"time.#{object.hour < 12 ? :am : :pm}")) if object.respond_to? :hour
   object.strftime(format)
 end
-</pre>
+{% endhighlight %}
 
 What this code does is basically take a format, look it up in the dictionaries and use it as a format string for _strftime_. If it can't find the format it will just convert the format parameter to a string and then use it in _strftime_ directly.
 
@@ -58,7 +58,7 @@ Well, as long as you work with only one type of values, it's usually pretty stra
 
 However, if you allow a parameter to have different types, things get a little more complicated in a dynamically typed language like Ruby. Where you would have interfaces and polymorphic methods in Java to ensure that all types are handled correctly, you need a full blown control structure in Ruby:
 
-<pre>
+{% highlight ruby %}
 def method(param)
   case param
   when Symbol
@@ -68,13 +68,13 @@ def method(param)
   # etc.
   end
 end
-</pre>
+{% endhighlight %}
 
 With lots of different options, this quickly gets a bit bloated but it's a thing we accept because we get added flexibility that comes with dynamic typing.
 
 The real challenge in this case is to conceive error handling that *works*. Where in Java each polymorphic method usually has its own validation rules, we'd have to throw them inside the code blocks in Ruby.
 
-<pre>
+{% highlight ruby %}
 def method(param)
   case param
   when Symbol
@@ -86,7 +86,7 @@ def method(param)
   # etc.
   end
 end
-</pre>
+{% endhighlight %}
 
 Sidenote: Premshree Pillai has written a very good "Introduction to Static and Dynamic Typing":http://www.sitepoint.com/article/typing-versus-dynamic-typing over at SitePoint, so check it out if you want.
 
@@ -94,7 +94,7 @@ h3. Apply it to Some Real Code
 
 To cut a long story a little shorter, let's take a look at why I don't like the current implementation of Simple#localize. Here's the code that I'd need to write in order to support both, Rails' existing behavior and i18n capabilities:
 
-<pre>
+{% highlight ruby %}
 def to_formatted_s(format = :default)
   return DATE_FORMATS[format].respond_to?(:call) ? DATE_FORMATS[format].call(self).to_s : strftime(DATE_FORMATS[format]) if DATE_FORMATS.keys.include?(format)
 
@@ -102,22 +102,22 @@ def to_formatted_s(format = :default)
   # neet to check first if the format is defined - if not, fall back to default to_s
   I18n.translate(:"#{type}.formats") ? I18n.localize(self, format) : to_default_s
 end
-</pre>
+{% endhighlight %}
 
 To shortly explain the flow: Rails looks up standard formats in its _DATE_FORMATS_ constant first. If it can find it it either calls it if it's a proc or uses the format as a format string for _strftime_. If it can't find the format in the constant it does localization. The _I18n.translate_ is necessary because _localize_ doesn't raise an exception if it can't find the supplied format but instead uses it as a string for _strftime_. We can't have that since Rails falls back to _to_default_s_ if it can't find the format.
 
 Here's what it would look like if _localize_ raised an exception if it can't find a format:
 
-<pre>
+{% highlight ruby %}
 def to_formatted_s(format = :default)
   # fall back to default to_s if localize raises an exception
   DATE_FORMATS.keys.include?(format) ? strftime(DATE_FORMATS[format]) : I18n.localize(self, format) rescue to_default_s
 end
-</pre>
+{% endhighlight %}
 
 Here's the implementation for _localize_ that I've "proposed to the i18n team":http://groups.google.com/group/rails-i18n/browse_thread/thread/7b042fffe6b40e3d:
 
-<pre>
+{% highlight ruby %}
 def localize(locale, object, format = :default)
   raise ArgumentError, "Object must be a Date, DateTime or Time object. #{object.inspect} given." unless object.respond_to?(:strftime)
  
@@ -140,7 +140,7 @@ def localize(locale, object, format = :default)
   format.gsub!(/%p/, translate(locale, :"time.#{object.hour < 12 ? :am : :pm}")) if object.respond_to? :hour
   object.strftime(format)
 end
-</pre>
+{% endhighlight %}
 
 What happens here, exception-wise? First of all, I kept the _ArgumentError_ that is raised if the object that is passed in doesn't respond to _strftime_. 
 
