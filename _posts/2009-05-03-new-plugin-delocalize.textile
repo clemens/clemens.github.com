@@ -19,7 +19,7 @@ Plus, there's another issue to tackle (also in the same customer project): Parsi
 
 So far, what I used to do - and I'm sure you did pretty much the same - was to implement some custom attribute writer to handle the parsing:
 
-<pre>
+{% highlight ruby %}
 def price=(price)
   write_attribute(:price, price.gsub(/[^0-9,]/, '').gsub(',', '.'))
 end
@@ -30,7 +30,7 @@ def publish_at=(publish_at)
   # ...
   write_attribute(:publish_at, publish_at)
 end
-</pre>
+{% endhighlight %}
 
 And, of course, if you wanted your forms to show localized output, you had to play the same game in reverse. No more: Use delocalize instead!
 
