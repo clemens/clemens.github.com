@@ -13,21 +13,21 @@ The concept behind it is actually fairly easy to grasp: Instead of calling the s
 
 Let's take a look at a simple example. We have a City class that has a zipcode and a name. We'll usually use both of these in our application, so we might write a method that looks like this:
 
-<pre>
+{% highlight ruby %}
 def zipcode_and_name
   "#{zipcode} #{name}"
 end
-</pre>
+{% endhighlight %}
 
 h3. Memoize Away!
 
 This is perfectly valid, however, every time we call this method during one request it always re-constructs the resulting string. So let's memoize the call in the classic way that you might have already stumbled across:
 
-<pre>
+{% highlight ruby %}
 def zipcode_and_name
   @zipcode_and_name ||= "#{zipcode} #{name}"
 end
-</pre>
+{% endhighlight %}
 
 The ||= operator is a so-called conditional assignment that only assigns the value on its right to the variable on its left if the variable is not _true_. Since pretty much everything in Ruby evaluates to _true_ when coerced into a boolean (except _nil_ and, of course, _false_, as well as a couple of other things) this is exactly what we want: The first call returns the actual string and from the second time on, no matter how often the method is called on the same object, the "cached" result will be used.
 
@@ -46,7 +46,7 @@ Although it was meant for internal purposes, the inclusion of this module initia
 
 To cut a long story short, here's the example we used earlier, rewritten to use the Memoizable API:
 
-<pre>
+{% highlight ruby %}
 # somewhere inside the class
 extend ActiveSupport::Memoizable
 
@@ -54,29 +54,29 @@ def zipcode_and_name
   "#{zipcode} #{name}"
 end
 memoize :zipcode_and_name
-</pre>
+{% endhighlight %}
 
 The _memoize_ macro method then takes care of caching the method call result and retrieving it as necessary.
 
 Part of the initial criticism also where that there was no way to force the cached result to be reloaded and that _memoize_ wouldn't work with methods that accepted parameters. Both of these issues have been fixed later - so methods with parameters can now be memoized as well:
 
-<pre>
+{% highlight ruby %}
 def some_method(*args)
   # some calculations
 end
 memoize :some_method
-</pre>
+{% endhighlight %}
 
 This roughly equals the following code (and is actually pretty much how the Memoizable module handles it internally):
 
-<pre>
+{% highlight ruby %}
 def some_method(*args)
   @some_method ||= {}
   @some_method[args] ||= (
     # some calculation
   )
 end
-</pre>
+{% endhighlight %}
 
 What happens here is that the cache is a hash instead of a mere scalar and the hash is indexed by the parameters that are passed to the method. So if I call a method twice with the same parameters, I'll get the cached result on the second call.
 
@@ -88,13 +88,13 @@ h3. Beware of the Dynamics!
 
 I can already feel people finishing reading this article and then going back to their code and doing something like this to their User class:
 
-<pre>
+{% highlight ruby %}
 def age
   today = Date.today
   today.year - birth_date.year + (today.month - birth_date.month + ((today.day - birth_date.day) < 0 ? -1 : 0) < 0 ? -1 : 0)
 end
 memoize :age
-</pre>
+{% endhighlight %}
 
 This may seem okay but imagine running this method one second before midnight on the day before a user's birthday: The memoized value will be returned even if the process runs longer than midnight (two seconds, say) and it's already their birthday!
 
@@ -108,16 +108,16 @@ h4. Memoizing Class Methods
 
 Since _memoize_ is already a class method, if you want to memoize a class method, you have to put the _memoize_ call in the class' metaclass:
 
-<pre>
+{% highlight ruby %}
 def self.a_class_method
   # some code
 end
 class << self; extend ActiveSupport::Memoizable; self; end.memoize :a_class_method
-</pre>
+{% endhighlight %}
 
 As you can see, this is not really clean - so here's a better way:
 
-<pre>
+{% highlight ruby %}
 class << self
   extend ActiveSupport::Memoizable
 
@@ -126,7 +126,7 @@ class << self
   end
   memoize :a_class_method
 end
-</pre>
+{% endhighlight %}
 
 Way better!
 
@@ -136,13 +136,13 @@ h4. Enable Memoization For All Active Records
 
 If you want to use memoize in a lot of your ActiveRecord models, you might think about extending the Memoizable module inside ActiveRecord::Base:
 
-<pre>
+{% highlight ruby %}
 # for memoizing instance methods:
 ActiveRecord::Base.extend(ActiveSupport::Memoizable)
 
 # for memoizing class methods:
 ActiveRecord::Base.class_eval { class << self; extend ActiveSupport::Memoizable; end }
-</pre>
+{% endhighlight %}
 
 This way, every descendant of ActiveRecord (i.e. all of your models) will be able to call _memoize_ without having to extend the module first.
 
