@@ -74,9 +74,9 @@ If there is no index on the _last_name_ field, the database will go through the 
 
 When and where to use indexes is a science by itself (contrary to what people might tell you, DBA is actually *not* redundant job for all those tech guys born before 1960), especially when it comes to combined indexes (i.e. indexes across multiple fields). Nevertheless, here's some indicators when an index might be useful:
 
-* Any field of a table that gets mentioned in _WHERE_ clauses may make a good index. Let's assume that you have a table containing blog posts and you want to filter all posts by a certain user, using something like <pre>SELECT * FROM posts WHERE author = 'Clemens'</pre> In this case, _author_ would be a potential index. Same goes for fields used in _ORDER BY_ clauses - they're usually more efficient when indexes, especially with large amounts of data.
+* Any field of a table that gets mentioned in _WHERE_ clauses may make a good index. Let's assume that you have a table containing blog posts and you want to filter all posts by a certain user, using something like {% highlight mysql %}SELECT * FROM posts WHERE author = 'Clemens'{% endhighlight %} In this case, _author_ would be a potential index. Same goes for fields used in _ORDER BY_ clauses - they're usually more efficient when indexes, especially with large amounts of data.
 
-* Any field that is part of a join condition is *definitely* a good choice for an index. In other words: Index your foreign keys. *Always!* Example: <pre>SELECT * FROM people LEFT OUTER JOIN addresses ON addresses.person_id = people.id</pre> In this example, _addresses.person_id_ should definitely be indexed. (Note: _people.id_ is, hopefully, indexed as primary key already.)
+* Any field that is part of a join condition is *definitely* a good choice for an index. In other words: Index your foreign keys. *Always!* Example: {% highlight mysql %}SELECT * FROM people LEFT OUTER JOIN addresses ON addresses.person_id = people.id{% endhighlight %} In this example, _addresses.person_id_ should definitely be indexed. (Note: _people.id_ is, hopefully, indexed as primary key already.)
 
 * Any field that is used by an aggregate function like _SUM_, _COUNT_, etc. may be a good candidate as well. If you don't write your own SQL and solely rely on ActiveRecord, you will hardly ever (if at all) use aggregate functions.
 
