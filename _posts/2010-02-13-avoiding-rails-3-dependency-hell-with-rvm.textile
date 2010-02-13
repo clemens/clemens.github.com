@@ -1,5 +1,5 @@
 ---
-title: Avoiding Rails Dependency Hell With RVM
+title: Avoiding Rails 3 Dependency Hell With RVM
 layout: post
 year: 2010
 published: true
