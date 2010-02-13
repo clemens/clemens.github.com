@@ -21,12 +21,12 @@ These issues gave me a more than valid reason to finally test out rvm. If you've
 
 To have separate environments, I installed rvm together with the newest Ruby 1.8.7 and activated it.
 
-<code>
+<pre>
   ~% rvm use 1.8.7
   ~% gem list
   *** LOCAL GEMS ***
   rake (0.8.7)
-</code>
+</pre>
 
 Bingo – no gems except for rake (which gets installed with rvm) installed in the current environment.
 
@@ -34,14 +34,14 @@ h3. Install the Rails 3 Gems
 
 As the introductory post suggests, the next step is to install Rails' dependencies manually (you won't have to do this when the final gem is released) and Rails itself:
 
-<code>
+<pre>
   ~% gem install tzinfo builder memcache-client rack rack-test rack-mount erubis mail text-format thor bundler i18n
   ~% gem install rails --pre
-</code>
+</pre>
 
 You can verify that you have two properly separated environments by checking gem lists and, for example, the rails command:
 
-<code>
+<pre>
   ~% rvm 1.8.7
   ~% which rails  
   /Users/clemens/.rvm/gems/ruby-1.8.7-p249/bin/rails
@@ -49,7 +49,7 @@ You can verify that you have two properly separated environments by checking gem
   ~% rvm system
   ~% which rails
   /Users/clemens/.gem/ruby/1.8/bin/rails
-</code>
+</pre>
 
 Neat.
 
@@ -61,13 +61,13 @@ h3. Another Option: rvm's Gem Sets
 
 When I suggested on Twitter that by using different Ruby versions on rvm you could circumvent dependency hell, "Prem Sichanugrist":http://sikachu.com/ replied that you could also use another rvm feature called "gem sets":http://rvm.beginrescueend.com/gemsets/. This basically allows you to have several different gem setups within the same Ruby installation. You can do this with a slightly altered rvm command:
 
-<code>
+<pre>
   # instead of ...
   ~% rvm 1.8.7
 
   # ... you use ..
   ~% rvm 1.8.7%rails3
-</code>
+</pre>
 
 This gives you a gem set called rails3 where you can keep your Rails 3 related gems safely tucked away from the rest.
 
