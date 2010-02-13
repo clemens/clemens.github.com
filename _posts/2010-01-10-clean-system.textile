@@ -120,3 +120,7 @@ The possibilities are endless. You could, for example,
 * etc.
 
 Personally, I'm happy with my setup for now. I can't say that I'll always be happy with it but at the moment it seems to be exactly what I want.
+
+h3. Update (13/2/2010)
+
+As I've run into a real dependency hell while toying with Rails 3, I recently installed "Ruby Version Manager (rvm)":http://rvm.beginrescueend.com/. I can now warmly recommend using this awesome piece of software if you have (or want) to juggle with multiple Ruby versions and (gem) environments. You can read some details of what made me install it in my post on "Avoiding Rails 3 Dependency Hell With RVM":/2010/02/13/avoiding-rails-3-dependency-hell-with-rvm/.

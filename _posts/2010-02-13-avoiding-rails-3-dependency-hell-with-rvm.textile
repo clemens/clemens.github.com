@@ -7,7 +7,7 @@ published: true
 
 You've probably read by now that the "Rails 3 beta has been released last week":http://weblog.rubyonrails.org/2010/2/5/rails-3-0-beta-release. I have to admit that I didn't actively follow the Rails' development over the last couple of months so I was quite excited to finally be able to get my hands on the beta gem.
 
-It turned out to not be so easy to get going with Rails 3 – hence this post. I want to show you how to get going with Rails 3 without the hassle that I had – by using "rvm":http://rvm.beginrescueend.com/.
+It turned out to not be so easy to get going with Rails 3 – hence this post. I want to show you how to get going with Rails 3 without the hassle that I had – by using "Ruby Version Manager aka rvm":http://rvm.beginrescueend.com/.
 
 h3. Don't Mess With Your Current Environment
 
