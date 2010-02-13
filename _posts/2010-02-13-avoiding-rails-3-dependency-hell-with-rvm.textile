@@ -75,4 +75,4 @@ And that's it – Rails 3 without too many dependency issues.
 
 h3. Update (13/2/2010)
 
-rvm's author "Wayne Seguin":http://blog.wayneseguin.us/ just pointed out that it is even easier to get going with rvm and Rails 3. You can read more about it in "this gist":http://gist.github.com/296055. Note that this uses Ruby 1.9.1 which might be a good idea, anyway – if you want to use Ruby 1.8.7, just replace the relevant lines in the gist.
+rvm's author "Wayne Seguin":http://beginrescueend.com/ just pointed out that it is even easier to get going with rvm and Rails 3. You can read more about it in "this gist":http://gist.github.com/296055. Note that this uses Ruby 1.9.1 which might be a good idea, anyway – if you want to use Ruby 1.8.7, just replace the relevant lines in the gist.
