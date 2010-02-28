@@ -214,6 +214,10 @@ blockquote {
 }
 
 /* cv */
+#cv h3 {
+  margin-top: 1em;
+}
+
 #cv h4 {
   margin-top: 0.5em;
 }
@@ -221,4 +225,12 @@ blockquote {
 #cv h4 a {
   font-weight: normal;
   font-size: 0.8em;
+}
+
+#cv ul.links {
+  display: inline;
+}
+
+#cv ul.links li {
+  display: inline;
 }
