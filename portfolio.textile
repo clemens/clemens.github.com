@@ -14,44 +14,38 @@ title: Portfolio
         <a href="http://abiagenten.de"><img src="/images/portfolio/teaser/abiagenten.png" alt="" /></a>
         <h4>abiagenten.de</h4>
         <p>
-          "abiagenten.de":http://abiagenten.de is a community platform that helps German people manage their Abitur (high school graduation).
-          I've written most of the administrative backend as well as the frontend calendar system and helped improve the testing strategy.
+          "abiagenten.de":http://abiagenten.de is a community platform that helps German people manage their Abitur (high school graduation). I've written most of the administrative backend as well as the frontend calendar system and helped improve the testing strategy.
+        </p>
+        <p>
+          In a separate project, I helped create and revise several statistics and charts for a big market research campaign.
         </p>
       </li>
       <li>
         <a href="http://bezirk-mödling.at"><img src="/images/portfolio/teaser/bezirkmoedling.png" alt="" /></a>
         <h4>bezirk-mödling.at</h4>
         <p>
-          "bezirk-mödling.at":http://bezirk-mödling.at is an event presentation platform for a district in Lower Austria.
-          Among other things, it features a calendar, heavily optimized search functions as well as powerfull search engine optimization.
+          "bezirk-mödling.at":http://bezirk-mödling.at is an event presentation platform for a district in Lower Austria. Among other things, it features an event calendar, heavily optimized search functions as well as powerful search engine optimization.
         </p>
       </li>
       <li>
         <a href="http://bierher.at"><img src="/images/portfolio/teaser/bierher.png" alt="" /></a>
         <h4>bierher.at</h4>
         <p>
-          "bierher.at":http://bierher.at is a drinks and snack delivery service franchise, based in Vienna, Austria.
-          I've rewritten their shop system from scratch and added a powerful administrative interface. Special features include real-time multiuser-capable
-          distribution/logistics management powered by "Google Maps":http://maps.google.com, advanced inventory management, some highly specialized search
-          functionalities and generally fancy AJAX stuff.
+          "bierher.at":http://bierher.at is a drinks and snack delivery service franchise, based in Vienna, Austria. I've rewritten their shop system from scratch and added a powerful administrative interface. Special features include real-time multiuser-capable distribution/logistics management powered by "Google Maps":http://maps.google.com, advanced inventory management, some highly specialized search functionalities and generally fancy AJAX stuff.
         </p>
       </li>
       <li>
         <a href="http://lesepartnerinnen.at"><img src="/images/portfolio/teaser/lesepartnerinnen2.png" alt="" /></a>
         <h4>lesepartnerinnen.at</h4>
         <p>
-          "lesepartnerinnen.at":http://lesepartnerinnen.at is a project sponsored by the Austrian Ministry for Education for presenting schools' reading projects.
-          I've developed the project presentation pages. What made this project special was that my work had to be integrated with an existing proprietary content
-          management system.
+          "lesepartnerinnen.at":http://lesepartnerinnen.at is a project sponsored by the Austrian Ministry for Education for presenting schools' reading projects. I've developed the project presentation pages. What made this project special was that my work had to be integrated with an existing proprietary content management system.
         </p>
       </li>
       <li>
         <a href="http://power4youth.eu"><img src="/images/portfolio/teaser/power4youth.png" alt="" /></a>
         <h4>power4youth.eu</h4>
         <p>
-          "power4youth.eu":http://power4youth.eu was intended as a community platform for out-of-home-childcare by "Quality4Children":http://quality4children.info,
-          a sub-organization of "SOS Children's Villages":http://sos-childrensvillages.org.
-          Sadly, the people responsible for the project left the company soon after the launch and the project has been in hibernation ever since.
+          "power4youth.eu":http://power4youth.eu was intended as a community platform for out-of-home-childcare by "Quality4Children":http://quality4children.info, a sub-organization of "SOS Children's Villages":http://sos-childrensvillages.org. Sadly, the people responsible for the project left the company soon after the launch and the project has been in hibernation ever since.
         </p>
       </li>
     </ul>
