@@ -3,26 +3,39 @@ layout: default
 title: About
 ---
 
-<div id="cv" class="box large">
+<div id="cv"class="content_box span-24">
   <div class="content_wrapper">
     <h2>Clemens Kofler - Curriculum Vitae</h2>
     <div>
-      <img align="left" src="http://gravatar.com/avatar/5976001c9ebf095c4988855a4e102de5?s=200" alt="Clemens Kofler" style="margin-right:10px; margin-bottom:10px;" />
+      <img align="right" src="http://gravatar.com/avatar/5976001c9ebf095c4988855a4e102de5?s=300" alt="Clemens Kofler" style="margin-right:10px; margin-bottom:10px;" />
       <h3>General</h3>
       <ul>
         <li>Born on 21 May 1986 in Hall in Tirol, Austria</li>
         <li>Currently living in Berlin, Germany</li>
+        <li>
+          On the web:
+          "GitHub":http://github.com/clemens |
+          "RailsRankings":http://railsrankings.com/coders/clemens-kofler |
+          "WorkingWithRails":http://workingwithrails.com/person/8252-clemens-kofler |
+          "XING":http://xing.com/profile/Clemens_Kofler |
+          "LinkedIn":http://de.linkedin.com/in/clemenskofler
+        </li>
       </ul>
 
       <h3>Professional experience</h3>
       <ul>
         <li>
-          <h4>railway</h4>
+          <h4>Cileos</h4>
+          <p class="description">Co-Founder and Partner</p>
+          <p class="date">since January 2010</p>
+        </li>
+        <li>
+          <h4>railway "http://www.railway.at":http://www.railway.at</h4>
           <p class="description">Web developer and consultant (freelancer)</p>
           <p class="date">since April 2007</p>
         </li>
         <li>
-          <h4>Allianz Insurance</h4>
+          <h4>Allianz Insurance "http://www.allianz.at":http://www.allianz.at</h4>
           <p class="description">Intern CRM/Marketing (part of university degree)</p>
           <p class="date">September 2007 - February 2008</p>
         </li>
@@ -32,7 +45,7 @@ title: About
           <p class="date">August 2005 - April 2007</p>
         </li>
         <li>
-          <h4>Management Center Innsbruck</h4>
+          <h4>Management Center Innsbruck "http://www.mci.edu":http://www.mci.edu</h4>
           <p class="description">Tutor for Java, PHP, database design and database programming</p>
           <p class="date">January 2005 - January 2007</p>
         </li>
@@ -46,17 +59,19 @@ title: About
       <h3>Education</h3>
       <ul>
         <li>
-          <h4>Management Center Innsbruck, Austria</h4>
-          <p class="description">Magister (FH) diploma degree in Management & Applied Informatics</p>
+          <h4>Management Center Innsbruck (University of Applied Science), Austria "http://www.mci.edu":http://www.mci.edu</h4>
+          <p class="description">Magister (FH) diploma degree in Management &amp; Applied Informatics</p>
+          <p>Thesis: <i>User Experience of Websites with Heterogenous Target Groups)</i></p>
           <p class="date">2004 - 2008</p>
         </li>
         <li>
-          <h4>University of Queensland, Australia</h4>
-          <p class="description">Study Abroad Exchange Semester (courses: International Journalism, Social Psychology, Leadership, Integrated Marketing)</p>
+          <h4>University of Queensland, Australia "http://www.uq.edu.au":http://www.uq.edu.au</h4>
+          <p class="description">Study Abroad Exchange Semester</p>
+          <p>Courses: International Journalism, Social Psychology, Leadership, Integrated Marketing</p>
           <p class="date">February 2007 - July 2007</p>
         </li>
         <li>
-          <h4>Franziskaner Gymnasium Hall in Tirol, Austria</h4>
+          <h4>Franziskaner Gymnasium Hall in Tirol, Austria "http://www.franziskaner.tsn.at":http://www.franziskaner.tsn.at</h4>
           <p class="description">High school graduate</p>
           <p class="date">1996 - 2004</p>
         </li>
@@ -70,9 +85,10 @@ title: About
           <p class="date">Rails Underground, London, July 2009</p>
           <p>
             Resources:
-            <a href="http://www.slideshare.net/clemensk/rails-i18n-from-the-trenches">Slides</a> |
-            <a href="http://skillsmatter.com/podcast/ajax-ria/clemens-kof-rails-i18n-from-the-trenches">Video</a> |
-            <a href="http://speakerrate.com/talks/1275-rails-i18n-from-the-trenches">SpeakerRate</a>
+            "Conference website":http://www.rails-underground.com/2009/06/talk-rails-i18n-from-the-trenches-clemens-kofler-.html |
+            "Slides":http://www.slideshare.net/clemensk/rails-i18n-from-the-trenches |
+            "Video":http://skillsmatter.com/podcast/ajax-ria/clemens-kof-rails-i18n-from-the-trenches |
+            "SpeakerRate":http://speakerrate.com/talks/1275-rails-i18n-from-the-trenches
           </p>
         </li>
       </ul>

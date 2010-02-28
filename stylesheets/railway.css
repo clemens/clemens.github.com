@@ -212,3 +212,13 @@ blockquote {
 #about .content_wrapper, #github .content_wrapper {
   height: 240px;
 }
+
+/* cv */
+#cv h4 {
+  margin-top: 0.5em;
+}
+
+#cv h4 a {
+  font-weight: normal;
+  font-size: 0.8em;
+}
