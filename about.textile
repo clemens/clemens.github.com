@@ -35,6 +35,6 @@ title: About
 
     <p>Clemens holds a diploma degree in information systems from Management Center Innsbruck which gives him a good background in commerce and economics. He plays the guitar and the piano, sings and enjoys good books. Contrary to what his friends might tell you, he also does sports ...</p>
 
-    <p>Contact him at <a href="mailto:clemens@railway.at">clemens@railway.at</a>.</p>
+    <p>Read "his CV":/cv or contact him at <a href="mailto:clemens@railway.at">clemens@railway.at</a>.</p>
   </div>
 </div>
