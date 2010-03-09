@@ -152,3 +152,17 @@ This way, you keep scopes somehow separate from the rest of your models' code.
 If you feel that in any case you absolutely must use scopes, make sure you *don't* convert use arel syntax for it and stick with the good old hash syntax for the time being. Keep in mind: Apparently, the hash syntax will be deprecated in Rails 3.1. But I guess Rails 3.1 won't be out for some time so you should be fine for now.
 
 In short: Named scopes are dead – long live arel!
+
+h3. Update (9/3/2010)
+
+"Iain Hecker":http://twitter.com/iain_nl correctly notes that using class methods was already possible in Rails 2 by using the <code>scoped</code>. Example:
+
+{% highlight ruby %}
+class << self
+  def by_author(author)
+    scoped(:conditions => { :author_id => author.id })
+  end
+end
+{% endhighlight %}
+
+You can, again, use this to circumvent the awkward lambda syntax but with Rails 2's hash syntax you don't do any harm in terms of update blockers.
