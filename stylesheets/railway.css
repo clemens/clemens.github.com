@@ -82,6 +82,11 @@ div.content h3 {
   margin: 1.5em 0 0.25em 0;
 }
 
+div.content .disclaimer {
+  font-style: italic;
+  margin: 20px;
+}
+
 #commentsAndTrackbacks {
   width: 615px;
   padding: 25px;

@@ -5,6 +5,10 @@ year: 2010
 published: true
 ---
 
+<p class="disclaimer">
+  *Clarification:* This post has been sitting unfinished on my disk for a couple of weeks but the update issues I ran into recently finally made me finish and publish it. I didn't write this post to insult or bash Rails 3 or its contributors for the scope/arel bug I'm mentioning somewhere along the road. I've created a "ticket in the Rails Lighthouse project":https://rails.lighthouseapp.com/projects/8994-ruby-on-rails/tickets/4142-arel-methods-in-scope-cause-issues-with-non-existent-tables that addresses the issue. If you have any insights or ideas with regards to the issue, please head over to the ticket and participate in the discussion.
+</p>
+
 About 2 years ago, Nick Kallen's awesome "has_finder plugin":http://pivots.pivotallabs.com/users/nick/blog/articles/284-hasfinder-it-s-now-easier-than-ever-to-create-complex-re-usable-sql-queries was "brought to Rails in the form of named scopes":http://ryandaigle.com/articles/2008/3/24/what-s-new-in-edge-rails-has-finder-functionality. And I loved them dearly and used them a lot. In Rails 3, so far, I've found them to be obsolete – even harmful. Which is why I think they're dead.
 
 In this article, I'll explain how named scopes were used in Rails 2, what was awesome about them and what wasn't quite so awesome. Then I'll take a look at what has changed in Rails 3 – mainly due to the advent of "arel":http://github.com/rails/arel – and explain why you should think twice before using scopes in Rails 3.
