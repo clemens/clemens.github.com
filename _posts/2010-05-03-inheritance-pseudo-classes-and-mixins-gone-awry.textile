@@ -1,0 +1,89 @@
+---
+title: Inheritance, Pseudo Classes and Mixins Gone Awray
+layout: post
+year: 2010
+published: true
+---
+
+Somebody asked me a few days ago to give them an opinion on how they approached implementing a little library dealing with SVG. While it seemed mostly okay, something struck me: Although there were multiple types of points/shapes, functionality was mostly shared using modules. That by itself isn't bad – it's only bad if inheritance would be the better, more natural choice.
+
+h3. Rubyists Love Modules
+
+We Rubyists love modules (mixins) because they allow us to share code between non-related types. In contrast to other programming languages – Java being a prime example –, Ruby modules have a major advantage: Not only do they let us share an interface but they also enable us to inject actual implementation. This comes at a cost: Because sharing implementation is so remarkably easy using modules, at times, we tend to overlook when we should actually favor inheritance.
+
+h3. Mixins Gone Awry
+
+Take a look at this (fake) example, based on the SVG stuff mentioned above:
+
+{% highlight ruby %}
+module Drawable
+  def draw
+    # ... whatever ...
+  end
+end
+
+class Triangle
+  include Drawable
+end
+
+class Rectangle
+  include Drawable
+end
+
+class Square
+  include Drawable
+end
+{% endhighlight %}
+
+One of the things to remember about object-oriented programming is that we're trying to depict reality by using objects. While using mixins certainly is possible, we *do* have actual real-life inheritance here: Triangles, rectangles and squares are all shapes; and squares are, of course, special rectangles.
+
+*If there is a relationship in reality, then we shouldn't destroy that relationship in OOP.*
+
+h3. Detecting Real Inheritance
+
+The ultimate helper to find out whether or not one should use inheritance is quite simple: You should use inheritance for _is a / is an_ relationships. "Rectangle is a shape?" => Yep. "Square is a rectangle?" => Yep.
+
+Unfortunately, we can't really count on Ruby's own <code>is_a?</code> method because it also takes into account modules:
+
+{% highlight ruby %}
+square = Square.new
+square.is_a?(Rectangle) # => true
+square.is_a?(Drawable)  # => true (and it really *is* true)
+{% endhighlight %}
+
+Whenever this is not the case, you're essentially doing fake inheritance. Some prime examples can be found in Rails: Inheriting from ActiveRecord::Base is wrong – at least in the object-oriented sense.
+
+{% highlight ruby %}
+class Person < ActiveRecord::Base
+end
+
+clemens = Person.new
+clemens.is_a?(Person)             # => true
+clemens.is_a?(ActiveRecord::Base) # => true (but only in Ruby/Rails, not in reality!)
+{% endhighlight %}
+
+In reality, a person just is *not* an <code>ActiveRecord::Base</code> (what is that anyway?).
+
+Other object mappers – "DataMapper":http://github.com/datamapper, "MongoMapper":http://github.com/jnunemaker/mongomapper, "CouchPotato":http://github.com/langalex/couch_potato etc. – are doing it right:
+
+{% highlight ruby %}
+class Person
+  include CouchPotato::Persistence
+end
+{% endhighlight %}
+
+While certain persons certainly are couch potatoes in its metaphorical sense, they aren't for real (again: What the hell is a <code>CouchPotato::Persistence</code>?) – so there should not be any inheritance.
+
+h3. Pseudo Classes
+
+Case and point: ActiveRecord::Bases don't exist in reality – I've never seen one walking down the street. So <code>ActiveRecord::Base</code>, in my opinion, is a pseudo class.
+
+*If something doesn't exist in reality, there shouldn't be a class for it.*
+
+On the other hand, I've certainly seen persons walking about and I've drawn a couple of squares and triangles in my time. These most certainly are real classes.
+
+Using mixins is just fine: Certain objects share behavior – like being persistable. However, you should name them accordingly. I like Java's often-seen approach here of suffixing its interface with _able_: Runnable, Serializable etc. It can be found in the Rails world, too: "Devise":http://github.com/plataformatec/devise uses it extensively. So in my opinion, the better name for the above would be <code>CouchPotato::Persistable</code>.
+
+h3. Summary
+
+When building a class hierarchy, try to think about reality: Are both classes real (non-pseudo) classes and is there a real, actual relationship between the classes in question? If so, use inheritance. If not, use mixins (and name them properly to reflect that they provide certain functionality). It's as simple as that.
