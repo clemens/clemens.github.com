@@ -51,7 +51,7 @@ square.is_a?(Rectangle) # => true
 square.is_a?(Drawable)  # => true (and it really *is* true)
 {% endhighlight %}
 
-Whenever this is not the case, you're essentially doing fake inheritance. Some prime examples can be found in Rails: Inheriting from ActiveRecord::Base is wrong – at least in the object-oriented sense.
+Whenever this is not the case, you're essentially doing fake inheritance. Some prime examples can be found in Rails: Inheriting from <code>ActiveRecord::Base</code> is wrong – at least in the object-oriented sense.
 
 {% highlight ruby %}
 class Person < ActiveRecord::Base
@@ -76,7 +76,7 @@ While certain persons certainly are couch potatoes in its metaphorical sense, th
 
 h3. Pseudo Classes
 
-Case and point: ActiveRecord::Bases don't exist in reality – I've never seen one walking down the street. So <code>ActiveRecord::Base</code>, in my opinion, is a pseudo class.
+Case and point: <code>ActiveRecord::Base</code>s don't exist in reality – I've never seen one walking down the street. So <code>ActiveRecord::Base</code>, in my opinion, is a pseudo class.
 
 *If something doesn't exist in reality, there shouldn't be a class for it.*
 
