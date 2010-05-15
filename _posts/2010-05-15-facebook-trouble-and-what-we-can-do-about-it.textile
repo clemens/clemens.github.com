@@ -1,5 +1,5 @@
 ---
-title: Facebook Trouble and What We Can Do About It
+title: Facebook Trouble (And What We Can Do About It)
 layout: post
 year: 2010
 published: true
