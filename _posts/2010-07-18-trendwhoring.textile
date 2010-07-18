@@ -5,7 +5,7 @@ year: 2010
 published: true
 ---
 
-This will be my shortest blog post ever because I basically only have one thing to say:
+This will be my shortest blog post ever because I basically only have one thing to get off my chest:
 
 _A good programmer is someone who embraces the advent of new technology as an *opportunity to learn* something new rather than to replace something existent just because the new thing is oh-so shiny and hip._
 
