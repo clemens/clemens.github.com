@@ -11,15 +11,13 @@ title: About
       <h3>General</h3>
       <ol>
         <li>Born on 21 May 1986 in Hall in Tirol, Austria</li>
-        <li>Currently living in Berlin, Germany</li>
+        <li>Currently living in Innsbruck, Austria</li>
         <li>
           On the web:
           <ul class="links">
             <li>"GitHub":http://github.com/clemens |</li>
-            <li>"RailsRankings":http://railsrankings.com/coders/clemens-kofler |</li>
             <li>"WorkingWithRails":http://workingwithrails.com/person/8252-clemens-kofler |</li>
             <li>"XING":http://xing.com/profile/Clemens_Kofler |</li>
-            <li>"LinkedIn":http://de.linkedin.com/in/clemenskofler</li>
           </ul>
         </li>
       </ol>
@@ -27,14 +25,14 @@ title: About
       <h3>Professional experience</h3>
       <ol>
         <li>
-          <h4>Cileos</h4>
-          <p class="description">Co-Founder and Partner</p>
-          <p class="date">since January 2010</p>
-        </li>
-        <li>
           <h4>railway "http://www.railway.at":http://www.railway.at</h4>
           <p class="description">Web developer and consultant (freelancer)</p>
           <p class="date">since April 2007</p>
+        </li>
+        <li>
+          <h4>Cileos</h4>
+          <p class="description">Co-Founder and Partner</p>
+          <p class="date">since January 2010</p>
         </li>
         <li>
           <h4>Allianz Insurance "http://www.allianz.at":http://www.allianz.at</h4>
@@ -60,6 +58,11 @@ title: About
 
       <h3>Education</h3>
       <ol>
+        <li>
+          <h4>University of Innsbruck, Austria "http://www.mci.edu":http://www.mci.edu</h4>
+          <p class="description">PhD in Management</p>
+          <p class="date">since 2010</p>
+        </li>
         <li>
           <h4>Management Center Innsbruck (University of Applied Science), Austria "http://www.mci.edu":http://www.mci.edu</h4>
           <p class="description">Magister (FH) diploma degree in Management &amp; Applied Informatics</p>
