@@ -30,7 +30,7 @@ title: Home
   <div class="content_wrapper">
     <h2>About</h2>
     <p>
-      <b>railway</b> is a web development company currently based in Berlin, Germany.
+      <b>railway</b> is a web development company currently based in Innsbruck, Austria.
       Although we've specialized in developing web applications with Ruby on Rails, we offer a wide range of services.
     </p>
     <p style="margin-top:1em;">Read more "about us":/about and check out "our services":/services and "our portfolio":/portfolio.</p>
