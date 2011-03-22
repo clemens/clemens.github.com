@@ -10,18 +10,18 @@ title: Imprint / Impressum
     <p>Responsible for content:</p>
     <p>
       Clemens Kofler<br />
-      Czarnikauer Strasse 6A<br />
-      10439 Berlin<br />
-      Germany
+      Innrain 19/10<br />
+      6020 Innsbruck<br />
+      Austria
     </p>
 
     <h3>Deutsch</h3>
     <p>Für den Inhalt verantwortlich:</p>
     <p>
       Clemens Kofler<br />
-      Czarnikauer Strasse 6A<br />
-      10439 Berlin<br />
-      Deutschland
+      Innrain 19/10<br />
+      6020 Innsbruck<br />
+      Österreich
     </p>
   </div>
 </div>

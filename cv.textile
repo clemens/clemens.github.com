@@ -17,7 +17,7 @@ title: About
           <ul class="links">
             <li>"GitHub":http://github.com/clemens |</li>
             <li>"WorkingWithRails":http://workingwithrails.com/person/8252-clemens-kofler |</li>
-            <li>"XING":http://xing.com/profile/Clemens_Kofler |</li>
+            <li>"XING":http://xing.com/profile/Clemens_Kofler</li>
           </ul>
         </li>
       </ol>
