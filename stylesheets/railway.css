@@ -23,7 +23,6 @@ h1 a {
 
 div#footer {
   background-color: #fff;
-  float: left;
 }
 
 h2.title a {
@@ -87,6 +86,17 @@ div.content .disclaimer {
   margin: 20px;
 }
 
+div.content table {
+  margin: 1em 0;
+}
+
+div.content table,
+div.content table td,
+div.content table th {
+  border: 1px solid black;
+  padding: 5px;
+}
+
 #commentsAndTrackbacks {
   width: 615px;
   padding: 25px;
@@ -141,6 +151,11 @@ a:hover, a:active {
 ul.bullets {
   list-style-type: disc;
   margin: 0.5em 2em 1em 2em;
+}
+
+div.content ul.no_bullets {
+  list-style-type: none;
+  margin: 0.5em 2em 0.5em 0;
 }
 
 blockquote {
@@ -209,6 +224,10 @@ blockquote {
   clear: left;
 }
 
+#client_projects .services {
+  font-style: italic;
+}
+
 /* box heights */
 #latest_posts .content_wrapper, #twitter .content_wrapper {
   height: 180px;
@@ -221,6 +240,15 @@ blockquote {
 /* about */
 #about p + p, #about h4 + p {
   margin-top: 0.5em;
+}
+
+/* praise */
+#quotes blockquote {
+  margin: 0;
+}
+
+#quotes li {
+  margin: 1em 0 1em 1em;
 }
 
 /* cv */
@@ -243,4 +271,41 @@ blockquote {
 
 #cv ul.links li {
   display: inline;
+}
+
+/* packages */
+.package {
+  text-align: center;
+  padding: 1em;
+  border: 1px solid #ff9b07;
+}
+
+.package h4 {
+  float: left;
+  margin-left: -1em;
+  margin-top: -1em;
+  padding: 0.5em;
+  font-weight: normal;
+  background-color: #ff9b07;
+  color: #ffffff;
+}
+
+.package .price,
+.package .notes,
+.package .discount {
+  clear: left;
+  display: block;
+}
+
+.package .notes {
+  font-size: 0.8em;
+}
+
+.package .price {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.package .notes {
+  font-style: italic;
 }

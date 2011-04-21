@@ -11,7 +11,7 @@ title: Home
         <li><span>{{ post.date | date: "%d.%m.%Y" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
       {% endfor %}
     </ul>
-    <p style="margin-top:1em;">You can read all posts in "our blog":/blog or subscribe to the "Atom Feed":/articles.atom.</p>
+    <p style="margin-top:1em;">You can read all posts in my "blog":/blog or subscribe to the "Atom Feed":/articles.atom.</p>
   </div>
 </div>
 
@@ -19,7 +19,7 @@ title: Home
   <div class="content_wrapper">
     <h2>Twitter</h2>
     <div id="tweets">
-     <p>Please wait while my tweets load <img src="/images/indicator.gif" /></p>
+     <p>Please wait while my tweets are loading <img src="/images/indicator.gif" /></p>
      <p><a href="http://twitter.com/clemensk">If you can't wait - check out what I've been twittering</a></p>
     </div>
     <p>You can also "view my full stream and/or follow me":http://twitter.com/clemensk.</p>
@@ -30,10 +30,10 @@ title: Home
   <div class="content_wrapper">
     <h2>About</h2>
     <p>
-      <b>railway</b> is a web development company currently based in Innsbruck, Austria.
-      Although we've specialized in developing web applications with Ruby on Rails, we offer a wide range of services.
+      <b>railway</b> is me, Clemens Kofler, a web developer currently based in Innsbruck, Austria.
+      I've specialized in developing web applications with Ruby on Rails and doing consulting in that area but I also offer some other web development-related services.
     </p>
-    <p style="margin-top:1em;">Read more "about us":/about and check out "our services":/services and "our portfolio":/portfolio.</p>
+    <p style="margin-top:1em;">Read more "about me":/about and check out "services I offer":/services and my "rates":/rates. You can also take a look at "my portfolio":/portfolio and read what "others are saying about me and my work":/praise.</p>
   </div>
 </div>
 
