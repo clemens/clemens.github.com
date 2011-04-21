@@ -42,9 +42,9 @@ title: Home
     <h2>Github</h2>
     <p>You can find code I've authored, co-authored or regularly contributed to on Github:</p>
     <ul class="bullets">
-      <li>"adva-cms"::http://github.com/svenfuchs/adva_cms (core developer)</li>
+      <li>"adva-cms":http://github.com/svenfuchs/adva_cms (core developer)</li>
       <li>"Steam":http://github.com/svenfuchs/steam (co-author)</li>
-      <li>"i18n":http://github.com/svenfuchs/i18n (core developer)</li>
+      <li>"i18n":http://github.com/svenfuchs/i18n (committer)</li>
       <li>"LaterDude":http://github.com/clemens/later_dude (author)</li>
       <li>"delocalize":http://github.com/clemens/delocalize (author)</li>
     </ul>
