@@ -1,0 +1,185 @@
+---
+title: Sphinx Facets on Crack
+layout: post
+year: 2011
+published: true
+---
+
+"Sphinx":http://sphinxsearch.com, despite some weaknesses, is great. Same goes for "Thinking Sphinx":http://ts.freelancing-gods.com. With one exception: "faceted search":http://en.wikipedia.org/wiki/Faceted_search. You know, those lists of categories/brands/... with product counts, like on Amazon.
+
+h3. Why Facets Suck in Sphinx (and Thinking Sphinx)
+
+The reason why facets suck in Sphinx is simple: Facets are created by grouping all matching records by a given attribute (like GROUP BY clauses in SQL). Thinking Sphinx' facets then return a hash, containing all attribute values and their respective counts. The problem is: Sphinx only supports numeric (and number-like) attributes. This means you can't store category names and group by them. Sphinx 1.10-beta solves the first problem – it lets you "store string values as attributes":http://sphinxsearch.com/docs/manual-1.10.html#conf-sql-attr-string. Unfortunately, the current beta version can only store and retrieve string attributes, but not sort or group them. I'm betting this will change in 1.10 final or some other future version but until then you can't use them directly in facets.
+
+The second issue is a bit of an annoyance in Thinking Sphinx: It doesn't sort facets. Most facets I've seen are sorted by count but some are also sorted by their keys (i.e. category name, brand name etc.). Thinking Sphinx could take sides but I understand that it doesn't.
+
+Also, Thinking Sphinx does "translation" for string attributes – i.e., it converts string values into integer representations for storage and does a reverse lookup when retrieving records (see "here":https://github.com/freelancing-god/thinking-sphinx/blob/rails3/lib/thinking_sphinx/facet.rb). While this is necessary for older Sphinx versions that didn't support proper string attributes, it gets in the way in Sphinx 1.10-beta (or later).
+
+These issues mean that you can generate facets through Thinking Sphinx but you'll have to handle sorting yourself while labeling is done through reverse lookups. While this works well in lots of scenarios, it can become fairly slow with large amounts of data and higher load. Consider a shop with a couple of hundred brands and several dozens of (nested) categories: To generate facets, Thinking Sphinx does reverse lookups for all string attributes and then you'd still have to order them iteratively (sort or sort_by in Ruby). Plus, even if you only need the top 10 brands or so, you'd still have to sort the whole set to find out what the top 10 are ... In our production environment, this (paired with an unfortunate data design decision) resulted in rendering times well beyond 2 seconds for pages that contained facets. Naturally, I had to do something about that.
+
+h3. Facets on Crack
+
+So much for the pre-story, let's turn to the solution.
+
+As mentioned above, Sphinx 1.10-beta supports string attributes – at least for storage and retrieval. You can leverage this in facets by storing ids *and* names for grouping and labeling respectively. This can be done in "Riddle":http://riddle.freelancing-gods.com, the Sphinx library underlying Thinking Sphinx.
+
+Consider my product model:
+
+{% highlight ruby %}
+class Product < ActiveRecord::Base
+  belongs_to :brand
+  belongs_to :category
+
+  define_index do
+    # ... other stuff
+
+    has brand_id
+    has brand.name, :as => :brand_name, :type => :string
+
+    has category_id
+    has category.name, :as => :category_name, :type => :string
+  end
+end
+{% endhighlight %}
+
+For every product, I'm indexing its brand and category id as well as their names. Then here's where the faceting happens:
+
+{% highlight ruby %}
+def brand_facets(*args)
+  options = args.extract_options!
+  options.merge!(:group_attribute => 'brand_id', :label_attribute => 'brand_name')
+  facets_2(*(args << options))
+end
+
+def category_facets(*args)
+  options = args.extract_options!
+  options.merge!(:group_attribute => 'category_id', :label_attribute => 'category_name')
+  facets_2(*(args << options))
+end
+
+def facets_2(*args)
+  options = args.extract_options!
+
+  group_attribute = options.delete(:group_attribute)
+  query           = args.first || ''
+
+  client = ThinkingSphinx::Configuration.instance.client
+
+  client.group_by       = group_attribute
+  client.group_function = :attr
+  client.group_clause   = '@count DESC'
+
+  client.query(query, 'product')[:matches] # product is the name of the index
+end
+{% endhighlight %}
+
+I've cut out some things to focus on the important bits. You can find the full version "here":/. Note that if you want the full Riddle result, you can just leave out the [:matches] index in the last line. Or you can already tweak it to the final output (see full version) if you don't mind the extra iteration and strife for clarity.
+
+The last missing bit is, of course, displaying the facets:
+
+{% highlight ruby %}
+def brand_facets(brand_facets, n = 10)
+  return if brand_facets.blank?
+
+  content_tag(:ul) do
+    brand_facets[0,n].map do |facet|
+      id, name, count = facet[:attributes].values_at('brand_id', 'brand_name', '@count')
+
+      content_tag(:li) do
+        link_to(name, products_path(params.merge(:brand_id => id))) + " (#{count})"
+      end
+    end.join("\n")
+  end
+end
+{% endhighlight %}
+
+And there you go: Facets at Light Speed. I've been running this in a production environment with ~ 2 million products and 3 facet attributes with no problems so far.
+
+Downsides of this approach:
+* The index grows: Although you save one integer attribute per facet-attribute (Thinking Sphinx defines one if you set :facet => true), you add a string attribute instead which is inherently larger to index.
+* Sphinx (searchd, to be more specific) holds all string attributes in RAM at the moment (see "the manual on string attributes":http://sphinxsearch.com/docs/manual-1.10.html#conf-sql-attr-string). This might change with upcoming versions but for now, keep a look at RAM usage if you decide to use my approach.
+
+h3. What do you think?
+
+Does this work for you? Do you see any downsides that I didn't see?
+
+h3. Addendum
+
+You need a small patch in Thinking Sphinx to make this work because Thinking Sphinx treats :string attributes as str2ordinal rather than string:
+
+{% highlight ruby %}
+ThinkingSphinx::Attribute.class_eval do
+  def type_to_config
+    {
+      :multi    => :sql_attr_multi,
+      :datetime => :sql_attr_timestamp,
+      # :string   => :sql_attr_str2ordinal,
+      :string   => :sql_attr_string,
+      :float    => :sql_attr_float,
+      :boolean  => :sql_attr_bool,
+      :integer  => :sql_attr_uint,
+      :bigint   => :sql_attr_bigint
+    }[type]
+  end
+end
+{% endhighlight %}
+
+Don't forget to adapt your code if you've been using str2ordinal before.
+
+---
+
+class Product < ActiveRecord::Base
+  define_index do
+    # ... other stuff
+
+    has brand_id
+    has brand.name, :as => :brand_name, :type => :string
+
+    has category_id
+    has category.name, :as => :category_name, :type => :string
+  end
+end
+
+
+def brand_facets(*args)
+  options = args.extract_options!
+  options.merge!(:group_attribute => 'brand_id', :label_attribute => 'brand_name')
+  facets_2(*(args << options))
+end
+
+def category_facets(*args)
+  options = args.extract_options!
+  options.merge!(:group_attribute => 'main_category_id', :label_attribute => 'main_category_name')
+  facets_2(*(args << options))
+end
+
+def facets_2(*args)
+  options = args.extract_options!
+
+  group_attribute = options.delete(:group_attribute)
+  label_attribute = options.delete(:label_attribute)
+
+  query   = args.first || ''
+
+  client = ThinkingSphinx::Configuration.instance.client
+
+  client.group_by       = group_attribute
+  client.group_function = :attr
+  client.group_clause   = '@count DESC'
+
+  result = client.query(query, 'product')[:matches]
+end
+
+def show_brand_overview(brand_facets, n = 10)
+  return if brand_facets.blank?
+
+  content_tag(:ul) do
+    brand_facets[0,n].map do |facet|
+      id, name, count = facet[:attributes].values_at('brand_id', 'brand_name', '@count')
+
+      content_tag(:li) do
+        link_to(name, products_path(params.merge(:brand_id => id))) + " (#{count})"
+      end
+    end.join("\n")
+  end
+end
