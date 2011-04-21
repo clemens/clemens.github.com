@@ -9,6 +9,10 @@ published: true
   *Clarification:* This post has been sitting unfinished on my disk for a couple of weeks but the update issues I ran into recently finally made me finish and publish it. I didn't write this post to insult or bash Rails 3 or its contributors for the scope/arel bug I'm mentioning somewhere along the road. I've created a "ticket in the Rails Lighthouse project":https://rails.lighthouseapp.com/projects/8994-ruby-on-rails/tickets/4142-arel-methods-in-scope-cause-issues-with-non-existent-tables that addresses the issue. If you have any insights or ideas with regards to the issue, please head over to the ticket and participate in the discussion.
 </p>
 
+<p class="disclaimer">
+  The bug mentioned in this post has been fixed quite a while ago. Please <a href="#updates">read the updates</a>.
+</p>
+
 About 2 years ago, Nick Kallen's awesome "has_finder plugin":http://pivots.pivotallabs.com/users/nick/blog/articles/284-hasfinder-it-s-now-easier-than-ever-to-create-complex-re-usable-sql-queries was "brought to Rails in the form of named scopes":http://ryandaigle.com/articles/2008/3/24/what-s-new-in-edge-rails-has-finder-functionality. And I loved them dearly and used them a lot. In Rails 3, so far, I've found them to be obsolete – even harmful. Which is why I think they're dead.
 
 In this article, I'll explain how named scopes were used in Rails 2, what was awesome about them and what wasn't quite so awesome. Then I'll take a look at what has changed in Rails 3 – mainly due to the advent of "arel":http://github.com/rails/arel – and explain why you should think twice before using scopes in Rails 3.
@@ -157,6 +161,8 @@ If you feel that in any case you absolutely must use scopes, make sure you *don'
 
 In short: Named scopes are dead – long live arel!
 
+<a name="updates"></a>
+
 h3. Update (9/3/2010)
 
 "Iain Hecker":http://twitter.com/iain_nl correctly notes that using class methods was already possible in Rails 2 by using the <code>scoped</code>. Example:
@@ -170,3 +176,9 @@ end
 {% endhighlight %}
 
 You can, again, use this to circumvent the awkward lambda syntax but with Rails 2's hash syntax you don't do any harm in terms of update blockers.
+
+h3. Update 2 (21/4/2011)
+
+Since some people have mentioned this post lately, I feel I should clarify that the bug that triggered this issue "has been fixed quite a while ago":https://github.com/rails/rails/commit/181c414baa877d748671d03fb09499c10f81ec02. I've since mostly used scopes for "simple" rules and class methods for more complex rules because in my opinion it reads better.
+
+*Mainly, whether you use scopes or class methods has, again, become a matter of personal taste.* My recommendation is to choose your own style or agree on one style with your fellow developers.
