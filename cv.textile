@@ -61,7 +61,7 @@ title: About
         <li>
           <h4>University of Innsbruck, Austria "http://uibk.ac.at":http://uibk.ac.at</h4>
           <p class="description">PhD in Management</p>
-          <p class="date">since 2010</p>
+          <p class="date">since October 2010</p>
         </li>
         <li>
           <h4>Management Center Innsbruck (University of Applied Science), Austria "http://www.mci.edu":http://www.mci.edu</h4>
