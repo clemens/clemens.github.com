@@ -11,7 +11,7 @@ Back in 2006 when I was starting out with Ruby and Rails (and, for that matter, 
 So *that's what I want to do*: Pair with you for some time, review/refactor code, write some tests, answer any questions ... In short: *Whatever you want or need. For free.*
 
 Here's what I'm thinking:
-* I want to spend *1.5-2 hours twice a week** (depending on my workload) on this.
+* I want to spend *1.5-2 hours twice a week* (depending on my workload) on this.
 * It will (mostly) take place in the evening – that is, *after 5pm Central European Time (UTC+2)*.
 * I'll announce dates and times a couple of days before.
 * We can use *Skype or iChat* for talking.
