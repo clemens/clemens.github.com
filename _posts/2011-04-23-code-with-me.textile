@@ -4,7 +4,7 @@ layout: post
 year: 2011
 ---
 
-2011 has been a good year for me so far – financially as well as in terms of cool work in general. I feel like it's time to share some of that luck with others and spend a couple of hours per week working pro bono.
+2011 has been a good year for me so far – financially as well as in terms of cool work in general. I feel like it's time to share some of that luck with others and spend a couple of hours per week working pro bono, helping people.
 
 Back in 2006 when I was starting out with Ruby and Rails (and, for that matter, back in 2001 when I started learning PHP), I wished I had someone who would just take the time to sit down and code a little with me: show me some tricks, help when I'd get stuck etc. Yes, there are forums (like "ruby-forum.com":http://www.ruby-forum.com/ and the "WorkingWithRails forums":http://workingwithrails.com/forums), but "like others":http://sweatyd.posterous.com/forums-are-crap I've never quite warmed up to forums – at least not in a support and learning context. Nothing's better than someone with more or equal experience sitting down with you and working with you – in programming terms, that's "pair programming":http://en.wikipedia.org/wiki/Pair_programming. I've never learned more (or at least felt that I've learned more) than during the couple of months pairing with "Sven Fuchs":http://svenfuchs.com who – apart from being an awesome person in general – was the greatest guy I could have wished to pair with. Recently, I've also discovered that I tend to learn a lot when explaining stuff to others.
 
