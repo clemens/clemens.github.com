@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Hire us!
+title: Hire me!
 ---
 
 <div class="content_box span-24">
