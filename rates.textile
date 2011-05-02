@@ -35,7 +35,7 @@ title: Rates
       <h3>Fixed-bid projects</h3>
 
       <p>
-        I usually don't go for fixed-bid projects because, frankly, somebody (either you or I or – worst case – both) is always going to be unhappy in the end. *I can work with a fixed budget*, though. I'll do my best to give a proper estimate whether or not I think that your project is doable with the given budget and we'll write user stories for the things you need. If your requirements change (and they probably will!) we can react to that by replacing outdated requirements with new ones. I'll always advise you as good as I can and definitely give notice if I think you might be running out of budget.
+        I usually don't go for fixed-bid projects because, frankly, somebody (either you or I or – worst case – both) is always going to be unhappy in the end. *I can work with a fixed budget*, though. I'll do my best to give a proper estimate whether or not I think that your project is doable with the given budget and we'll write specifications for the things you need. If your requirements change (and they probably will!) we can react to that by replacing outdated requirements with new ones. I'll always advise you as good as I can and definitely give notice if I think we might be running out of budget.
       </p>
 
       <h3>Profit sharing</h3>
@@ -50,10 +50,10 @@ title: Rates
         If you want me to work on-site, you will have to *cover at least part of my travel and accommodation expenses*. I'm not picky, though: I need a clean single room with a bed, a shower and free (preferably unlimited) internet access – nothing fancy. By Central European standards, an average 2 star hotel, a good hostel or a guest room of an employee will do just fine.
       </p>
 
-      <h3>Deposit</h3>
+      <h3>Down payment</h3>
 
       <p>
-        If you want to book me for a longer period and/or some time in advance, please note that I might consider negotiating a deposit with you. This is simply because I'll have to refuse other potential projects – if you then postpone the project last-minute that would seriously impact my cash flow. Don't worry, though: *I'm sure we can make arrangements that will be okay for you and me.*
+        If you want to book me for a longer period and/or some time in advance, please note that I might consider negotiating a down payment with you. This is simply because I'll have to refuse other potential projects – if you then postpone the project last-minute that would seriously impact my cash flow. Don't worry, though: *I'm sure we can make arrangements that will be okay for you and me.*
       </p>
     </div>
   </div>
