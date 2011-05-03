@@ -6,9 +6,9 @@ year: 2011
 
 The overall response to my offer to "Code With Me":/2011/04/23/code-with-me was very positive – lot's of retweets and encouragement. I also got about two dozen emails from people wanting to code with me – which may not sound like a lot but I was very happy with the amount.
 
-Anyway, before I share some details about the first 4 sessions, I just want to announce that *until further notice and unless I'm otherwise engaged, the offer continues every Sunday afternoon/evening*. I will do *one or two sessions* (mostly depending on interest on your side) roughly between *1pm and 8pm* so everyone between Hawaii and New Zealand can take the offer if they want to. ;-)
+Anyway, before I share some details about the first 4 sessions, I just want to announce that *until further notice and unless I'm otherwise engaged, the offer continues every Sunday afternoon/evening*. I will do *one or two sessions* (mostly depending on interest on your side) roughly between *1pm and 8pm Central European (Summer) Time* (that's currently UTC+2) (check out "Every Time Zone":http://everytimezone.com/ to find out what time this is in your time zone) so everyone between Hawaii and New Zealand can take the offer if they want to. ;-)
 
-So the next session(s) will be on *Sunday 8 May between 1pm and 8pm*.
+So the next session(s) will be on *Sunday 8 May between 1pm and 8pm Central European Summer Time (UTC+2)*.
 
 The story will basically stay the same:
 
@@ -17,7 +17,7 @@ The story will basically stay the same:
 * Please ensure that you have a working Ruby environment and a text editor/IDE. I use TextMate – if you don't have it and/or prefer another editor, that's fine, of course, as long as you don't make fun of me for my low Vim/Emacs/whatever skills. ;-)
 * If you want to work on code for your company, please doublecheck with your superior if it's okay to work on the code with me.
 * Some written feedback (positive, negative, neutral) after the session would be much appreciated but, of course, isn't required.
-* If you're interested, send me an email at "clemens at thisdomain". Please include some relevant details about you (Ruby/Rails/general programming experience), how you would like to spend the time (topic(s) to talk about, project information etc.) and which date(s) and time(s) would be good for you. Regarding projects: The first few sessions showed that it really pays to use an actual project as a basis for work/discussion. I don't mind whether this is a personal or company project or what the current status is – the only requirement (of sorts) is that you have an idea what you want to work on.
+* If you're interested, send me an email at "clemens at thisdomain". Please include some relevant details about you (Ruby/Rails/general programming experience), how you would like to spend the time (topic(s) to talk about, project information etc.) and which date(s) and time(s) would be good for you (you should also include your time zone/UTC offset so we can work out times easily). Regarding projects: The first few sessions showed that it really pays to use an actual project as a basis for work/discussion. I don't mind whether this is a personal or company project or what the current status is – the only requirement (of sorts) is that you have an idea what you want to work on.
 
 I will definitely respond to every email I get – if I'm busy, that might take 1 or 2 days.
 
