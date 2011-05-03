@@ -5,7 +5,7 @@ year: 2010
 published: true
 ---
 
-<p class="disclaimer">
+<p class="info_box">
   *Clarification:* This post has been sitting unfinished on my disk for a couple of weeks but the update issues I ran into recently finally made me finish and publish it. I didn't write this post to insult or bash Rails 3 or its contributors for the scope/arel bug I'm mentioning somewhere along the road. I've created a "ticket in the Rails Lighthouse project":https://rails.lighthouseapp.com/projects/8994-ruby-on-rails/tickets/4142-arel-methods-in-scope-cause-issues-with-non-existent-tables that addresses the issue. If you have any insights or ideas with regards to the issue, please head over to the ticket and participate in the discussion.
 </p>
 
