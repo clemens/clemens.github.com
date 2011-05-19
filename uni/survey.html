@@ -1,0 +1,14 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var url      = window.location.href;
+
+    var group    = Math.round(Math.random());
+    var language = url.substring(url.lastIndexOf('?') + 1) == 'en' ? 'en' : 'de';
+
+    $('#info').html('Sprache: ' + language + ', Gruppe: ' + group);
+  });
+</script>
+
+<span id="info"></span>
