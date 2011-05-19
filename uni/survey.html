@@ -2,13 +2,16 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
+    var surveyCodes = {
+      en: ['NLGZ7V2', 'NL66ZHV'],
+      de: ['NVKKLBD', 'NJ3V2FG']
+    }
+
     var url      = window.location.href;
 
     var group    = Math.round(Math.random());
     var language = url.substring(url.lastIndexOf('?') + 1) == 'en' ? 'en' : 'de';
 
-    $('#info').html('Sprache: ' + language + ', Gruppe: ' + group);
+    window.location.replace('https://www.surveymonkey.com/s/' + surveyCodes[language][group]);
   });
 </script>
-
-<span id="info"></span>
