@@ -31,7 +31,7 @@ title: Home
     <h2>About</h2>
     <p>
       <b>railway</b> is me, Clemens Kofler, a web developer currently based in Innsbruck, Austria.
-      I've specialized in developing web applications with Ruby on Rails and doing consulting in that area but I also offer some other web development-related services.
+      I've specialized in developing web applications with Ruby on Rails since 2006 and doing consulting in that area but I also offer some other web development-related services.
     </p>
     <p style="margin-top:1em;">Read more "about me":/about and check out "services I offer":/services and my "rates":/rates. You can also take a look at "my portfolio":/portfolio and read what "others are saying about me and my work":/praise.</p>
   </div>
