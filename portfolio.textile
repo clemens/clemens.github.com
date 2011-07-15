@@ -15,7 +15,7 @@ title: Portfolio
         <h4>redpeppix.</h4>
         <p class="services">Services: consulting, training/coaching, development</p>
         <p>
-          "redpeppix.":http://redpeppix.com is a social commerce solution that allows users to create personalized product recommendations on images and be remunerated if people decide to follow their recommendation. I was brought in to help the project turn around and launch in time as well as to coach their development team in Ruby/Rails. Since then, I've helped with developing the platform, creating and connecting APIs and generally keeping the project in good shape together with their strong team.
+          "redpeppix.":http://redpeppix.com is a social commerce solution that allows users to create personalized product recommendations on images and be remunerated if people decide to follow their recommendation. I was brought in to help the project launch in time as well as to coach their team in Ruby/Rails. Since then, I've helped with developing the platform, creating and connecting APIs and generally keeping the project in good shape together with their strong team.
         </p>
       </li>
       <li>
