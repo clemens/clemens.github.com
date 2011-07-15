@@ -39,7 +39,7 @@ title: Portfolio
         <h4>avarteq GmbH</h4>
         <p class="services">Services: consulting, training/coaching</p>
         <p>
-          "Avarteq":http://www.avarteq.de is a web agency and hosting company. I've coached and mentored their team of young developers, showing them tricks and development strategies in Ruby/Rails, automated testing, software architecture and project management.
+          "Avarteq":http://www.avarteq.de is a web agency and hosting company. I've coached some of the developers in their great team in various areas of my expertise. I’m also regularly consulted for quality assurance and added to projects as a freelancer when in peak times.
         </p>
       </li>
       <li>
