@@ -5,6 +5,7 @@ year: 2012
 ---
 
 h3. TL;DR
+
 Most people would benefit from gaining some basic coding skills. Coding empowers them to build their own stuff and helps them to learn the structured and strategic approach to problem solving that we coders use every day to solve our programming problems.
 
 h3. Background
