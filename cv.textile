@@ -32,7 +32,7 @@ title: About
         <li>
           <h4>Cileos</h4>
           <p class="description">Co-Founder and Partner</p>
-          <p class="date">since January 2010</p>
+          <p class="date">January 2010 - August 2011</p>
         </li>
         <li>
           <h4>Allianz Insurance "http://www.allianz.at":http://www.allianz.at</h4>
