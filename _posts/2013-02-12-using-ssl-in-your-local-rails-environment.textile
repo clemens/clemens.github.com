@@ -1,0 +1,66 @@
+---
+layout: post
+title: Using SSL in your local Rails environment
+year: 2013
+---
+
+For every other project, the requirement of using SSL/HTTPS crops up. And I'm sure, just like me, you were annoyed that there doesn't seem to be a simple way to test your SSL stuff in your local development environment.
+
+Well: Not any more. Here's how you set up your local Rails environment so that you can use SSL in development if you want or need to.
+
+Note: I'm assuming you don't want to mess with your local Apache but want to use the regular Rails server command.
+
+h3. A Gist to Make Your Life Easier
+
+Today, when I googled for solutions, I found "a gist":https://gist.github.com/trcarden/3295935 outlining how to set up a self-signed SSL certificate for your localhost. It works like a charm.
+
+I've put all the files in <code>~/.ssl</code> so I can use it across projects.
+
+h3. Configuring Your Rails App
+
+Next up is Rails.
+
+The first flaw: Using the regular <code>script/rails server</code> seems to be unable to serve both, SSL and non-SSL requests, at the same port – which, of course, makes sense. We can circumvent this problem by simply starting two servers at two different ports (I use the "thin webserver":http://code.macournoyer.com/thin/ in this example):
+
+<pre>
+  thin start -p 3000
+  thin start -p 3001 --ssl --ssl-verify --ssl-key-file ~/.ssl/localhost.key --ssl-cert-file ~/.ssl/localhost.crt
+</pre>
+
+Now we've got a non-SSL version of our app running on port 3000 and the SSL version on port 3001. You can, of course, also put these in your <code>Procfile</code> if you're using the awesome "foreman gem":http://rubygems.org/gems/foreman.
+
+Now to the Rails app itself.
+
+Since version 3.1, Rails ships with a controller macro named <code>force_ssl</code> so you don't need the good old "ssl_requirement":https://github.com/rails/ssl_requirement plugin any longer.
+
+However, the implementation of <code>force_ssl</code> that ships with Rails has a major flaw: It explicitly excludes the development environment. And it assumes that the frontend server can handle ports itself – which the regular Rails server can't. Both issues can be alleviated by monkeypatching the <code>ActionController::ForceSSL</code> module that ships with Rails:
+
+{% highlight ruby %}
+ActionController::ForceSSL::ClassMethods.module_eval do
+  def force_ssl(options = {})
+    config = Rails.application.config
+
+    return unless config.use_ssl # <= this is new
+
+    host = options.delete(:host)
+    port = config.ssl_port if config.respond_to?(:ssl_port) && config.ssl_port.present? # <= this is also new
+
+    before_filter(options) do
+      if !request.ssl?# && !Rails.env.development? # commented out the exclusion of the development environment
+        redirect_options = {:protocol => 'https://', :status => :moved_permanently}
+        redirect_options.merge!(:host => host) if host
+        redirect_options.merge!(:port => port) if port # <= this is also new
+        redirect_options.merge!(:params => request.query_parameters)
+        redirect_to redirect_options
+      end
+    end
+  end
+end
+
+{% endhighlight %}
+
+*use_ssl* and *ssl_port* are custom config settings that are not part of the Rails standard configuration. However, in Rails 3 you can simply "add custom config settings by just defining them":http://stackoverflow.com/a/5053882. So just add <code>config.use_ssl = false</code> to <code>config/application.rb</code> and the same setting set to <code>true</code> in <code>config/environments/development.rb</code> and <code>config/environments/production.rb</code>. In <code>config/environments/development.rb</code>, you also need to add <code>config.ssl_port = 3001</code> since this is what we defined earlier. Note that I suggest turning SSL off again once you're done testing – constant port switching can be quite confusing (I know it does confuse me).
+
+And with that, you're good to go. Simply add <code>force_ssl</code> to any controller you want to secure with SSL. If you navigate to the non-SSL version of a page that forces SSL (e.g. http://localhost:3000/some/page), your Rails app will automatically redirect you to the SSL version (https://localhost:3001/some/page).
+
+Note that depending on your browser you might receive a certificate warning because you're using a self-signed certificate. Just tell your browser to shut up and go ahead with it.
