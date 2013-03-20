@@ -1,0 +1,76 @@
+---
+layout: post
+title: distance_of_time_in_words with proper grammar (and more flexibility)!
+year: 2013
+---
+
+If you've ever written an app that uses Rails' <code>distance_of_time_in_words</code> (as well as the related <code>time_ago_in_words</code>) helper method and the app was either translated to locales other than English or wasn't in English in the first place, you've probably been bitten by its lack of proper grammar.
+
+{% highlight ruby %}
+I18n.locale = :en
+time_ago_in_words(2.days.ago) + ' ago' # => 2 days ago
+I18n.locale = :de
+'vor ' + time_ago_in_words(2.days.ago) # => vor 2 Tage (should be "vor 2 Tagen")
+{% endhighlight %}
+
+People "wrote all kinds of sick workarounds":https://gist.github.com/tordans/1309595 to get around this problem but even with these workarounds it was still a pain if you needed a few variations (such as a <code>future_time_in_words</code> helper).
+
+Even if grammar wasn't an issue (e.g. in English), it was annoying that you always had to add the "ago" either manually or using a second translation with an interpolation argument.
+
+{% highlight ruby %}
+# assuming a locale file containing the following:
+# en:
+#   time_ago_in_words: '%{days} ago'
+I18n.t('time_ago_in_words', :days => time_ago_in_words(2.days.ago)) # => 2 days ago
+{% endhighlight %}
+
+You had to do this even if you used the <code>time_ago_in_words</code> helper that suggested the inclusion of "ago" even in its name although it didn't include it.
+
+These issues have been fixed in Rails' master branch for a while (see "commit e22e78545112eaad857ab1e02119e20ce10065d0":https://github.com/rails/rails/commit/e22e78545112eaad857ab1e02119e20ce10065d0) by simply making the translation scope configurable via the options hash. Thanks to "Steve Klabnik":http://twitter.com/steveklabnik is has also been "backported to Rails 3.2":https://github.com/rails/rails/pull/8321 and was released in the Rails 3.2.13. So now, even in Rails 3.2, you can do stuff like this:
+
+{% highlight ruby %}
+# assuming a locale file containing the following:
+# de:
+#   datetime:
+#     time_ago_in_words:
+#       x_days:
+#         one: vor einem Tag
+#         other: ! 'vor %{count} Tagen'
+I18n.locale = :de
+distance_of_time_in_words(2.days.ago, Time.current, false, :scope => :'datetime.time_ago_in_words') # => vor 2 Tagen
+{% endhighlight %}
+
+And if you need something like the aforementioned <code>future_time_in_words</code>, it's easy to write it yourself and just add an appropriate scope:
+
+{% highlight ruby %}
+# assuming a locale file containing the following:
+# de:
+#   datetime:
+#     future_time_in_words:
+#       x_days:
+#         one: in einem Tag
+#         other: ! 'in %{count} Tagen'
+
+def future_time_in_words(to_time, include_seconds = false, options = {})
+  options.reverse_merge!(:scope => :'datetime.future_time_in_words')
+  distance_of_time_in_words(to_time, Time.current, include_seconds, options)
+end
+
+I18n.locale = :de
+future_time_in_words(2.days.from_now) # => in 2 Tagen
+{% endhighlight %}
+
+The only remaining pain is that <code>time_ago_in_words</code> hasn't been backported yet. You can fix this by just overwriting it:
+
+{% highlight ruby %}
+
+def time_ago_in_words(from_time, include_seconds = false, options = {})
+  options.reverse_merge!(:scope => :'datetime.time_ago_in_words')
+  distance_of_time_in_words(from_time, Time.current, include_seconds, options)
+end
+
+I18n.locale = :de
+time_ago_in_words(2.days.from_now) # => vor 2 Tagen
+{% endhighlight %}
+
+I will probably whip up a pull request for that (and maybe include the future time helper as well) to fix that. Other than that, we can finally get rid of our scary workarounds.
