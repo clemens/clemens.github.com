@@ -1,0 +1,343 @@
+---
+layout: default
+title: Training Camp
+---
+
+<div class="content_box span-24">
+<div class="content_wrapper">
+<h2>
+
+Training Camp
+
+</h2>
+<div class="content">
+<p>
+
+If you’re hiring young developers, sometimes straight from university,
+chances are they lack experience. Send them to **Training Camp** to turn
+them into proper Rubyists.
+
+</p>
+<p>
+
+I love passing on knowledge – you can hopefully tell from reading my
+<a href="/blog">blog</a> – and I’ve been tutoring students in
+programming languages and database systems for 2 years while studying at
+university – with good results and great feedback from my students and
+professors alike.
+
+</p>
+<h3>
+
+What I might teach your team
+
+</h3>
+<p>
+
+Here are some things inexperienced developers often lack and therefore
+might profit from my coaching:
+
+</p>
+<ul class="bullets">
+<li>
+
+Most people still learn C or Java at university and therefore have no
+clue about **Ruby style and idioms**. I can show them the ropes in Ruby.
+
+</li>
+<li>
+
+In my experience, **Object-oriented design and programming** and
+**software architecture** just aren’t taught properly at university.
+
+</li>
+<li>
+
+Same goes for **agile development** and – even more importantly –
+**automated testing and test-driven development**.
+
+</li>
+<li>
+
+Inexperienced developers usually don’t know basic **Design Patterns**. I
+can show them these important tools.
+
+</li>
+</ul>
+<p>
+
+If you have specific things you want me to train your team in, please
+contact me.
+
+</p>
+<h3>
+
+How much does it cost?
+
+</h3>
+<p>
+
+My <a href="/rates">standard rates</a> apply. Contact me directly if you
+need a custom quote.
+
+</p>
+<h3>
+
+Training Camp Package
+
+</h3>
+<p>
+
+Here’s an example of what a Training Camp might look like.
+
+</p>
+<p>
+
+Let’s say your company has **3 developers** that you want me to coach
+for **3 days each** (something between 3 and 5 days makes the most
+sense, in my opinion). The schedule might look something like this:
+
+</p>
+<table>
+<tbody>
+<tr>
+<th colspan="2" scope="row">
+
+before arrival
+
+</th>
+<td colspan="2">
+<ul class="no_bullets">
+<li>
+
+talk through details
+
+</li>
+<li>
+
+provide some details on current projects and code samples so I know what
+to expect
+
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th rowspan="5" scope="row">
+
+Week 1
+
+</th>
+<th scope="row">
+
+Monday
+
+</th>
+<td colspan="2" rowspan="3">
+
+Coaching developer 1
+
+</td>
+</tr>
+<tr>
+<th scope="row">
+
+Tuesday
+
+</th>
+</tr>
+<tr>
+<th scope="row">
+
+Wednesday
+
+</th>
+</tr>
+<tr>
+<th scope="row">
+
+Thursday
+
+</th>
+<td colspan="2">
+
+Coaching developer 2
+
+</td>
+</tr>
+<tr>
+<th scope="row">
+
+Friday
+
+</th>
+<td>
+
+Coaching developer 2
+
+</td>
+<td>
+<ul class="no_bullets">
+<li>
+
+Team coaching
+
+</li>
+<li>
+
+**drinks**
+
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th rowspan="5" scope="row">
+
+Week 2
+
+</th>
+<th scope="row">
+
+Monday
+
+</th>
+<td colspan="2">
+
+Coaching developer 2
+
+</td>
+</tr>
+<tr>
+<th scope="row">
+
+Tuesday
+
+</th>
+<td>
+
+Coaching developer 2
+
+</td>
+<td>
+
+Coaching developer 3
+
+</td>
+</tr>
+<tr>
+<th scope="row">
+
+Wednesday
+
+</th>
+<td colspan="2" rowspan="2">
+
+Coaching developer 3
+
+</td>
+</tr>
+<tr>
+<th scope="row">
+
+Thursday
+
+</th>
+</tr>
+<tr>
+<th scope="row">
+
+Friday
+
+</th>
+<td>
+
+Coaching developer 3
+
+</td>
+<td>
+<ul class="no_bullets">
+<li>
+
+Team coaching
+
+</li>
+<li>
+
+**drinks**
+
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th colspan="2" scope="row">
+
+after departure
+
+</th>
+<td colspan="2">
+<ul class="no_bullets">
+<li>
+
+additional feedback
+
+</li>
+<li>
+
+follow-up questions
+
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+<thead>
+<tr>
+<th>
+
+Week
+
+</th>
+<th>
+
+Day
+
+</th>
+<th>
+
+Morning
+
+</th>
+<th>
+
+Afternoon
+
+</th>
+</tr>
+</thead>
+</table>
+<p>
+
+I usually offer to be available for questions after departure via
+IM/E-Mail. This is generally **free of charge** if it doesn’t get out of
+hand.
+
+</p>
+<div class="package">
+<h4>
+
+Training Camp 2-Week Package
+
+</h4>
+
+<span class="price">Package price: 5,000 EUR</span>  
+<span class="notes">excluding VAT/sales tax and travel/accommodation
+expenses, if applicable</span>  
+<span class="discount">This means you **save 1,000 EUR (nearly 20%!)**
+from my regular rates.</span>
+
+</div>
+</div>
+</div>
+</div>

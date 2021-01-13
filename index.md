@@ -1,0 +1,232 @@
+---
+layout: default
+title: Home
+---
+
+<div id="latest_posts" class="content_box span-16">
+<div class="content_wrapper">
+<h2>
+
+Latest posts
+
+</h2>
+<ul>
+
+{% for post in site.posts limit:5 %}
+
+<li>
+
+<span>{{ post.date \| date: “%d.%m.%Y” }}</span> »
+<a href="{{ post.url }}">{{ post.title }}</a>
+
+</li>
+
+{% endfor %}
+
+</ul>
+<p style="margin-top:1em;">
+
+You can read all posts in my [blog](/blog) or subscribe to the [Atom
+Feed](/articles.atom.</p>)
+
+</div>
+</div>
+<div id="twitter" class="content_box span-8 last">
+<div class="content_wrapper">
+<h2>
+
+Twitter
+
+</h2>
+<div id="tweets">
+<p>
+
+Please wait while my tweets are loading
+<img src="/images/indicator.gif" />
+
+</p>
+<p>
+
+<a href="http://twitter.com/clemensk">If you can’t wait - check out what
+I’ve been twittering</a>
+
+</p>
+</div>
+<p>
+
+You can also [view my full stream and/or follow
+me](http://twitter.com/clemensk.</p>)
+
+</div>
+</div>
+<div id="about" class="content_box span-12">
+<div class="content_wrapper">
+<h2>
+
+About
+
+</h2>
+<p>
+
+<b>railway</b> is me, Clemens Kofler, a web developer currently based in
+Innsbruck, Austria.  
+I’ve specialized in developing web applications with Ruby on Rails since
+2006 and doing consulting in that area but I also offer some other web
+development-related services.
+
+</p>
+<p style="margin-top:1em;">
+
+Read more [about me](/about) and check out [services I offer](/services)
+and my [rates](/rates). You can also take a look at [my
+portfolio](/portfolio) and read what [others are saying about me and my
+work](/praise.</p>)
+
+</div>
+</div>
+<div id="github" class="content_box span-12 last">
+<div class="content_wrapper">
+<h2>
+
+Github
+
+</h2>
+<p>
+
+You can find code I’ve authored, co-authored or regularly contributed to
+on Github:
+
+</p>
+<ul class="bullets">
+<li>
+
+[adva-cms](http://github.com/svenfuchs/adva_cms) (core developer)
+
+</li>
+<li>
+
+[Steam](http://github.com/svenfuchs/steam) (co-author)
+
+</li>
+<li>
+
+[i18n](http://github.com/svenfuchs/i18n) (committer)
+
+</li>
+<li>
+
+[LaterDude](http://github.com/clemens/later_dude) (author)
+
+</li>
+<li>
+
+[delocalize](http://github.com/clemens/delocalize) (author)
+
+</li>
+</ul>
+<p>
+
+… and [others](http://github.com/clemens.</p>)
+
+</div>
+</div>
+<div id="archive" class="content_box span-24">
+<div class="content_wrapper">
+<h2>
+
+Archive
+
+</h2>
+<h3>
+
+2013
+
+</h3>
+<ul>
+
+{% for post in site.posts %}  
+{% if post.year  2013 %}
+          \<li\>\<span\>{{ post.date \| date: "%d.%m." }}\</span\> &raquo; \<a href="{{ post.url }}"\>{{ post.title }}\</a\>\</li\>
+        {% endif %}
+      {% endfor %}
+    \</ul\>
+    \<h3\>2012\</h3\>
+    \<ul\>
+      {% for post in site.posts %}
+        {% if post.year  2012 %}
+
+<li>
+
+<span>{{ post.date \| date: “%d.%m.” }}</span> »
+<a href="{{ post.url }}">{{ post.title }}</a>
+
+</li>
+
+{% endif %}  
+{% endfor %}
+
+</ul>
+<h3>
+
+2011
+
+</h3>
+<ul>
+
+{% for post in site.posts %}  
+{% if post.year  2011 %}
+          \<li\>\<span\>{{ post.date \| date: "%d.%m." }}\</span\> &raquo; \<a href="{{ post.url }}"\>{{ post.title }}\</a\>\</li\>
+        {% endif %}
+      {% endfor %}
+    \</ul\>
+    \<h3\>2010\</h3\>
+    \<ul\>
+      {% for post in site.posts %}
+        {% if post.year  2010 %}
+
+<li>
+
+<span>{{ post.date \| date: “%d.%m.” }}</span> »
+<a href="{{ post.url }}">{{ post.title }}</a>
+
+</li>
+
+{% endif %}  
+{% endfor %}
+
+</ul>
+<h3>
+
+2009
+
+</h3>
+<ul>
+
+{% for post in site.posts %}  
+{% if post.year  2009 %}
+          \<li\>\<span\>{{ post.date \| date: "%d.%m." }}\</span\> &raquo; \<a href="{{ post.url }}"\>{{ post.title }}\</a\>\</li\>
+        {% endif %}
+      {% endfor %}
+    \</ul\>
+    \<h3\>2008\</h3\>
+    \<ul\>
+      {% for post in site.posts %}
+        {% if post.year  2008 %}
+
+<li>
+
+<span>{{ post.date \| date: “%d.%m.” }}</span> »
+<a href="{{ post.url }}">{{ post.title }}</a>
+
+</li>
+
+{% endif %}  
+{% endfor %}
+
+</ul>
+</div>
+</div>
+<script type="text/javascript" src="http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js">
+</script>
+<script type="text/javascript" src="/javascripts/tweets.js">
+</script>
