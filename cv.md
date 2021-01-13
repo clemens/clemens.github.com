@@ -27,7 +27,7 @@ Born on 21 May 1986 in Hall in Tirol, Austria
 </li>
 <li>
 
-Currently living in Innsbruck, Austria
+Currently living in Munich, Germany
 
 </li>
 <li>

@@ -50,7 +50,7 @@ About
 <p>
 
 <b>railway</b> is me, Clemens Kofler, a web developer currently based in
-Innsbruck, Austria.  
+Munich, Germany.
 I’ve specialized in developing web applications with Ruby on Rails since
 2006 and doing consulting in that area but I also offer some other web
 development-related services.

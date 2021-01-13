@@ -13,7 +13,7 @@ About
 <p>
 
 <b>railway</b> is a web development company currently based in
-Innsbruck, Austria.  
+Munich, Germany.
 We offer all kinds of services including:
 
 </p>
