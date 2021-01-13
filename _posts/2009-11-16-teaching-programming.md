@@ -1,0 +1,75 @@
+---
+title: Teaching Programming
+layout: post
+year: 2009
+published: false
+---
+
+I’ve written about “how to teach Rails” and given “tips for learning
+Rails” previously. While I still I agree with most of what I’ve said
+back then, I’ve been thinking about another idea lately - and it’s
+nothing new at all.
+
+### My Experiences With Teaching Programming
+
+Some might know that during my time at university, I’ve tutored more or
+less tech-savvy and talented students in Java, PHP and database
+design/programming. Granted, some people - even after a couple of months
+of programming - just didn’t understand the difference between a
+variable and a method or between a class and an object. Or fucked the
+semicolons up constantly. However, most of the students got those basics
+- grammar and basic vocabulary, if you want - right. They got stuck at
+the next level: If given a problem, how do I approach solving it? This
+is where most of them got stuck - and failed (unless you consider just
+barely passing the exam as succeeding, of course).
+
+### Why We Programmers Are Different
+
+We programmers are problem solvers. Some business person approaches us
+and tells us their problem and we run off and try to solve their problem
+as good as we can. But what is the first thing we do before we actually
+fire up our computers? Be honest: While the business person was talking
+to you, you’ve already started splitting their problem up into tiny
+subproblems and potential implementation steps, haven’t you?
+
+Right, and that’s where experienced or born programmers are different:
+Beginners or less talented programmers tend to just see the problem as a
+whole and then stumble towards a possible solution. If they get stuck,
+they dig up their own or a fellow programmer’s old code to copy from or
+ask Google and copy from the results. In my opinion, copy&paste
+programming as well as spaghetti code are much more often results of
+unexperienced programmers being overwhelmed by a task and unable to
+approach it in a structured way than of bad editors, bad programming
+languages or blurry requirements.
+
+Structure is the key: Just like you can’t just mess with the time series
+in a movie (unless, of course, you’re Quentin Tarantino) or a book, you
+can’t just stuff code in random places and expect it to work smoothly.
+And you’ve certainly been to conference talks, university lectures etc.
+where you’ve thought “What the F\* is this guy talking about?” - because
+the talk/lecture lacked structure.
+
+### But How Do We Teach Structure?
+
+Ah, it’s getting more interesting. Here’s my answer (and I think it’s a
+good one, too): By forcing them to do something they should be doing
+right from the start anyway - Test Driven Development!
+
+I am as guilty as most people of occasionally writing code before
+writing a proper test for it (although, with the advent of Cucumber, I’d
+like to think that I’m now less prone to doing that). When I do this and
+I add a test later, I usually experience an immediate urge to refactor
+my code. Why? Simple: Because it’s hard to test. While writing my spike
+and experimenting with some code bits, I probably just stuffed lots of
+code in a single method that should actually have been split across
+multiple methods or even multiple classes. Thus, when writing tests for
+it, I’d have to write test variants for every possible combination of
+parameters that result in different if/else statements being executed in
+a different order … You get the point.
+
+With TDD, this most likely wouldn’t have happened. I’d have thought
+about the problem more carefully upfront and split it up into separate
+small subproblems - or units - and written tests for every unit. This,
+in turn, might also have raised new questions for the business person
+(“Alright, this happens if the user puts a positive amount there - but
+what if it’s negative?”) that could have been answered straight away.

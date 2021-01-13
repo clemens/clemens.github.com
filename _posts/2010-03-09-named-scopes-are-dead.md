@@ -1,0 +1,280 @@
+---
+title: Named Scopes Are Dead
+layout: post
+year: 2010
+published: true
+---
+
+<p class="info_box">
+
+**Clarification:** This post has been sitting unfinished on my disk for
+a couple of weeks but the update issues I ran into recently finally made
+me finish and publish it. I didn’t write this post to insult or bash
+Rails 3 or its contributors for the scope/arel bug I’m mentioning
+somewhere along the road. I’ve created a [ticket in the Rails Lighthouse
+project](https://rails.lighthouseapp.com/projects/8994-ruby-on-rails/tickets/4142-arel-methods-in-scope-cause-issues-with-non-existent-tables)
+that addresses the issue. If you have any insights or ideas with regards
+to the issue, please head over to the ticket and participate in the
+discussion.
+
+</p>
+<p class="disclaimer">
+
+The bug mentioned in this post has been fixed quite a while ago. Please
+<a href="#updates">read the updates</a>.
+
+</p>
+
+About 2 years ago, Nick Kallen’s awesome [has_finder
+plugin](http://pivots.pivotallabs.com/users/nick/blog/articles/284-hasfinder-it-s-now-easier-than-ever-to-create-complex-re-usable-sql-queries)
+was [brought to Rails in the form of named
+scopes](http://ryandaigle.com/articles/2008/3/24/what-s-new-in-edge-rails-has-finder-functionality).
+And I loved them dearly and used them a lot. In Rails 3, so far, I’ve
+found them to be obsolete – even harmful. Which is why I think they’re
+dead.
+
+In this article, I’ll explain how named scopes were used in Rails 2,
+what was awesome about them and what wasn’t quite so awesome. Then I’ll
+take a look at what has changed in Rails 3 – mainly due to the advent of
+[arel](http://github.com/rails/arel) – and explain why you should think
+twice before using scopes in Rails 3.
+
+### What Named Scopes Used To Be
+
+Named scopes’ awesomeness mainly came from the possibility to pass them
+around as objects, stack them etc. *without them being evaluated*. They
+were only evaluated when you tried to use them like any other
+ActiveRecord collection – like calling an iterator on them. Folks call
+this **lazy loading**. Here’s an example:
+
+{% highlight ruby %}
+class Post < ActiveRecord::Base
+  named_scope :published, :conditions => { :published => true }
+end
+
+class PostsController < ApplicationController
+  def index
+    @posts = Post.published # ... no query here ...
+    # @posts = Post.published.all would trigger a query
+  end
+end
+
+# somewhere in the view:
+@posts.each do |post| # here's where the query gets triggered
+  # ...
+end
+{% endhighlight %}
+
+One of the things it enabled you to do slightly more complex stuff in
+controllers without cluttering them up:
+
+{% highlight ruby %}
+@posts = Post.published
+@posts = @posts.by_author(@author) if @author
+@posts = @posts.after(@start_date) if @start_date
+# ...
+{% endhighlight %}
+
+Some people might argue that this stuff belongs into the model anyway
+(and I’m sure, we all remember having huge finder methods featuring the
+infamous <code>with_scope</code> method) but I say named scopes enabled
+a more balanced communication between the controller and its models.
+
+### But It’s Different Now
+
+Different how? Well, thanks to [arel](http://github.com/rails/arel),
+everything in Rails now is a scope of sorts anyway – a *relation* to be
+more exact. A relation only gets lazy loaded – just like a named scope
+used to. Take a look:
+
+{% highlight ruby %}
+# in the controller
+@posts = Post.where(["created_at >= ?", Time.current]) # no query yet ...
+# again, @posts = Post.where(["created_at >= ?", Time.current]).all would trigger a query
+
+# in the view
+@posts.each do |post| # here's where it triggers the query
+  # ...
+end
+{% endhighlight %}
+
+This is somewhat similar to what you could do in Rails 2 by using the
+<code>scoped</code> method:
+
+{% highlight ruby %}
+@posts = Post.scoped(:conditions => ["created_at >= ?", Time.current])
+{% endhighlight %}
+
+So effectively, every relation stays unevaluated until you hit it with a
+non-arel method like <code>each</code> or <code>all</code>. Read more in
+[Pratik’s blog post on the new ActiveRecord Query
+API](http://m.onkey.org/2010/1/22/active-record-query-interface) – no
+need for me to go into too much detail with him explaining it so well.
+
+If you want to read more about relational algebra – the basic
+mathematical rules that arel is based on – there’s [a pretty good
+wikipedia article on
+it](http://en.wikipedia.org/wiki/Relational_algebra).
+
+### Where’s The Harm?
+
+You might argue that using <code>named_scope</code> (or, as it is in
+Rails 3, just <code>scope</code>) makes your models a bit more
+declarative and I tend to agree: It certainly looks good to expose most
+of your models’ APIs in class level statements like <code>scope</code>,
+<code>has_many</code> etc. and put them all on top. But let’s look at
+the downsides.
+
+For starters, I’ve never quite liked the syntax to define dynamic scopes
+using lambdas:
+
+{% highlight ruby %}
+scope :by_author, lambda { |author|
+  {
+    :conditions => { :author_id => author.id }
+  }
+}
+{% endhighlight %}
+
+There’s just too much punctuation flying around for my taste and you
+can’t use the do/end syntax unless you parenthesize the whole lambda,
+thanks to operator precedence. If the need for optional parameters
+arises, things can get really messy. Even more so, since Ruby 1.9
+changes some things about lambdas – if you develop in both, 1.8 and 1.9,
+that can really wreck your brain.
+
+But the real harm happens when you decide to ditch the hash syntax in
+favor of arel:
+
+{% highlight ruby %}
+scope :published, where(:published => true)
+{% endhighlight %}
+
+Unknowingly, you might have just created an update blocker for your
+co-developers! Scopes – like associations – are evaluated when a class
+is loaded and arel checks that the underlying table (in this case
+*posts*) exists. Now imagine you check the new blog feature into your
+git repository, including the migration that actually creates the
+*posts* table. A co-developer tries to migrate and might just get the
+following:
+
+    ~/tmp/scopes% rake db:migrate
+    (in /Users/clemens/tmp/scopes)
+    rake aborted!
+    Could not find table 'posts'
+
+This happens if – by accident or intentionally – the post model is
+loaded somewhere as port the environment startup. This happens, for
+example, if you define an observer on the post model or extend some
+model in an initializer. To work around this, your co-developer would
+have to **comment out the offending scopes, migrate and comment them in
+again**. Seems tedious, huh? And what for? A little more expressiveness?
+And don’t forget that your continuous integration server needs to
+migrate every once in a while, too, and can’t just comment out a few
+lines …
+
+### Class Methods To The Rescue
+
+Thanks to arel’s greatness, you can avoid the hassle and just go back to
+using good old class methods:
+
+{% highlight ruby %}
+class << self
+  def published
+    where(:published => true)
+  end
+end
+{% endhighlight %}
+
+Remember that relations stay unevaluated – and thus still chainable! –
+until they’re first used in a non-arel context.
+
+This also helps to avoid the tedious lambda syntax that was needed for
+dynamic scopes:
+
+{% highlight ruby %}
+class << self
+  def by_author(author)
+    where(:author_id => author.id)
+  end
+end
+{% endhighlight %}
+
+No problems with optional parameters or differences between Ruby
+versions either – methods are just methods, after all. So after all,
+there is just **one** syntax for **one** thing again.
+
+### Should I Ditch Scopes Completely?
+
+I say, for any new work you do, you definitely should avoid using scopes
+because of the update blocker it might become. Just use class methods
+instead as shown above.
+
+If you’re porting a Rails 2 application to Rails 3, you’ll get a whole
+load of deprecation warnings because <code>named_scope</code> has been
+renamed to be just <code>scope</code>. If you want to avoid these
+deprecation warnings, you have to work through your code anyway, so you
+might as well just go ahead and turn scopes into class methods.
+
+The only exception is if you want or need to use scope extensions.
+However, I’ve somehow managed to never have to use them so maybe you can
+avoid them, too.
+
+If you want to keep some of scopes’ declarative nature, consider just
+putting them in a module named <code>Scopes</code> and extending the
+class like so:
+
+{% highlight ruby %}
+class Post < ActiveRecord::Base
+  module Scopes
+    def by_author(author)
+      where(:author_id => author.id)
+    end
+  end
+  extend Scopes
+end
+{% endhighlight %}
+
+This way, you keep scopes somehow separate from the rest of your models’
+code.
+
+If you feel that in any case you absolutely must use scopes, make sure
+you **don’t** convert use arel syntax for it and stick with the good old
+hash syntax for the time being. Keep in mind: Apparently, the hash
+syntax will be deprecated in Rails 3.1. But I guess Rails 3.1 won’t be
+out for some time so you should be fine for now.
+
+In short: Named scopes are dead – long live arel!
+
+<a name="updates"></a>
+
+### Update (9/3/2010)
+
+[Iain Hecker](http://twitter.com/iain_nl) correctly notes that using
+class methods was already possible in Rails 2 by using the
+<code>scoped</code>. Example:
+
+{% highlight ruby %}
+class << self
+  def by_author(author)
+    scoped(:conditions => { :author_id => author.id })
+  end
+end
+{% endhighlight %}
+
+You can, again, use this to circumvent the awkward lambda syntax but
+with Rails 2’s hash syntax you don’t do any harm in terms of update
+blockers.
+
+### Update 2 (21/4/2011)
+
+Since some people have mentioned this post lately, I feel I should
+clarify that the bug that triggered this issue [has been fixed quite a
+while
+ago](https://github.com/rails/rails/commit/181c414baa877d748671d03fb09499c10f81ec02).
+I’ve since mostly used scopes for “simple” rules and class methods for
+more complex rules because in my opinion it reads better.
+
+**Mainly, whether you use scopes or class methods has, again, become a
+matter of personal taste.** My recommendation is to choose your own
+style or agree on one style with your fellow developers.
