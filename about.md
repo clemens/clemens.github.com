@@ -99,7 +99,7 @@ occasionally does sports …
 </p>
 <p>
 
-Read [his CV](/cv) or contact him at
+Read <a href="/cv">his CV</a> or contact him at
 <a href="mailto:clemens@railway.at">clemens@railway.at</a>.
 
 </p>

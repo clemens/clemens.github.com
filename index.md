@@ -26,8 +26,7 @@ Latest posts
 </ul>
 <p style="margin-top:1em;">
 
-You can read all posts in my [blog](/blog) or subscribe to the [Atom
-Feed](/articles.atom).
+You can read all posts in my <a href="/blog">blog</a> or subscribe to the <a href="/articles.atom">Atom Feed</a>.
 
 </p>
 
@@ -59,8 +58,7 @@ development-related services.
 </p>
 <p style="margin-top:1em;">
 
-Read more [about me](/about) and check out [services I offer](/services)
-and my [rates](/rates). You can also take a look at [my portfolio]( portfolio) and read what [others are saying about me and my work](/praise).
+Read more <a href="/about">about me</a> and check out <a href="/services">services I offer</a> and my <a href="/rates">rates</a>. You can also take a look at <a href="/portfolio">my portfolio</a> and read what <a href="/praise">others are saying about me and my work</a>.
 
 </p>
 
@@ -80,35 +78,25 @@ on Github:
 
 </p>
 <ul class="bullets">
-<li>
-
-[adva-cms](http://github.com/svenfuchs/adva_cms) (core developer)
-
-</li>
-<li>
-
-[Steam](http://github.com/svenfuchs/steam) (co-author)
-
-</li>
-<li>
-
-[i18n](http://github.com/svenfuchs/i18n) (committer)
-
-</li>
-<li>
-
-[LaterDude](http://github.com/clemens/later_dude) (author)
-
-</li>
-<li>
-
-[delocalize](http://github.com/clemens/delocalize) (author)
-
-</li>
+  <li>
+    <a href="http://github.com/svenfuchs/adva_cms">adva_cms</a> (core developer)
+  </li>
+  <li>
+    <a href="http://github.com/svenfuchs/steam">Steam</a> (co-author)
+  </li>
+  <li>
+    <a href="http://github.com/svenfuchs/i18n">Ruby i18n</a> (core committer)
+  </li>
+  <li>
+    <a href="http://github.com/clemens/later_dude">LaterDude</a> (author)
+  </li>
+  <li>
+    <a href="http://github.com/clemens/delocalize">delocalize</a> (author)
+  </li>
 </ul>
 <p>
 
-… and [others](http://github.com/clemens.</p>)
+… and <a href="http://github.com/clemens">others</a>.</p>
 
 </div>
 </div>

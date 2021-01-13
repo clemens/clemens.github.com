@@ -3,7 +3,7 @@ layout: default
 title: About
 ---
 
-<div id="cv"class="content_box span-24">
+<div id="cv" class="content_box span-24">
 <div class="content_wrapper">
 <h2>
 
@@ -35,21 +35,9 @@ Currently living in Innsbruck, Austria
 On the web:
 
 <ul class="links">
-<li>
-
-[GitHub](http://github.com/clemens) \|
-
-</li>
-<li>
-
-[WorkingWithRails](http://workingwithrails.com/person/8252-clemens-kofler)
-\|
-
-</li>
-<li>
-
-[XING](http://xing.com/profile/Clemens_Kofler</li>)
-
+<li><a href="http://github.com/clemens">GitHub</a> |</li>
+<li><a href="http://workingwithrails.com/person/8252-clemens-kofler">WorkingWithRails</a> |</li>
+<li><a href="http://xing.com/profile/Clemens_Kofler">XING</a></li>
 </ul>
 </li>
 </ol>
@@ -62,7 +50,7 @@ Professional experience
 <li>
 <h4>
 
-railway [http://www.railway.at](http://www.railway.at</h4>)
+railway <a href="http://www.railway.at">http://www.railway.at</a></h4>
 
 <p class="description">
 
@@ -95,7 +83,7 @@ January 2010 - August 2011
 <li>
 <h4>
 
-Allianz Insurance [http://www.allianz.at](http://www.allianz.at</h4>)
+Allianz Insurance <a href="http://www.allianz.at">http://www.allianz.at</a></h4>
 
 <p class="description">
 
@@ -129,7 +117,7 @@ August 2005 - April 2007
 <h4>
 
 Management Center Innsbruck
-[http://www.mci.edu](http://www.mci.edu</h4>)
+<a href="http://www.mci.edu">http://www.mci.edu</a></h4>
 
 <p class="description">
 
@@ -170,7 +158,7 @@ Education
 <h4>
 
 University of Innsbruck, Austria
-[http://uibk.ac.at](http://uibk.ac.at</h4>)
+<a href="http://uibk.ac.at">http://uibk.ac.at</a></h4>
 
 <p class="description">
 
@@ -179,7 +167,7 @@ PhD in Management
 </p>
 <p class="date">
 
-since October 2010
+2010-2012 (on hold)
 
 </p>
 </li>
@@ -187,7 +175,7 @@ since October 2010
 <h4>
 
 Management Center Innsbruck (University of Applied Science), Austria
-[http://www.mci.edu](http://www.mci.edu</h4>)
+<a href="http://www.mci.edu">http://www.mci.edu</a></h4>
 
 <p class="description">
 
@@ -211,7 +199,7 @@ Groups</i>
 <h4>
 
 University of Queensland, Australia
-[http://www.uq.edu.au](http://www.uq.edu.au</h4>)
+<a href="http://www.uq.edu.au">http://www.uq.edu.au</a></h4>
 
 <p class="description">
 
@@ -234,7 +222,7 @@ February 2007 - July 2007
 <h4>
 
 Franziskaner Gymnasium Hall in Tirol, Austria
-[http://www.franziskaner.tsn.at](http://www.franziskaner.tsn.at</h4>)
+<a href="http://www.franziskaner.tsn.at">http://www.franziskaner.tsn.at</a></h4>
 
 <p class="description">
 
@@ -275,29 +263,10 @@ Rails Underground, London, July 2009
 Resources:
 
 <ul class="links">
-<li>
-
-[Conference
-website](http://www.rails-underground.com/2009/06/talk-rails-i18n-from-the-trenches-clemens-kofler-.html)
-\|
-
-</li>
-<li>
-
-[Slides](http://www.slideshare.net/clemensk/rails-i18n-from-the-trenches)
-\|
-
-</li>
-<li>
-
-[Video](http://skillsmatter.com/podcast/ajax-ria/clemens-kof-rails-i18n-from-the-trenches)
-\|
-
-</li>
-<li>
-
-[SpeakerRate](http://speakerrate.com/talks/1275-rails-i18n-from-the-trenches</li>)
-
+<li><a href="http://www.rails-underground.com/2009/06/talk-rails-i18n-from-the-trenches-clemens-kofler-.html">Conference Website</a> |</li>
+<li><a href="http://www.slideshare.net/clemensk/rails-i18n-from-the-trenches">Slides</a> |</li>
+<li><a href="http://skillsmatter.com/podcast/ajax-ria/clemens-kof-rails-i18n-from-the-trenches">Video</a> |</li>
+<li><a href="http://speakerrate.com/talks/1275-rails-i18n-from-the-trenches">SpeakerRate</a></li>
 </ul>
 </li>
 </ol>

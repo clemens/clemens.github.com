@@ -233,7 +233,7 @@ blockquote {
   height: 180px;
 }
 
-#about .content_wrapper, #github .content_wrapper {
+#github .content_wrapper {
   height: 240px;
 }
 

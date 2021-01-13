@@ -12,9 +12,7 @@ Portfolio
 </h2>
 <p>
 
-You can read about some of my [client projects](#client_projects) and my
-[open source work](#open_source) here. Look [here](/praise) to see what
-clients and other developers think about me and my work.
+You can read about some of my <a href="#client_projects">client projects</a> and my <a href="#open_source">open source work</a> here. Look <a href="/praise">here</a> to see what clients and other developers think about me and my work.
 
 </p>
 <p style="font-style:italic; font-size:0.8em;">
@@ -45,7 +43,7 @@ Services: consulting, training/coaching, development
 </p>
 <p>
 
-[redpeppix.](http://redpeppix.com) is a social commerce solution that
+<a href="http://redpeppix.com">redpeppix.</a> is a social commerce solution that
 allows users to create personalized product recommendations on images
 and be remunerated if people decide to follow their recommendation. I
 was brought in to help the project launch in time as well as to coach
@@ -71,11 +69,10 @@ Services: development
 </p>
 <p>
 
-[Slash7](http://slash7.com) are Amy Hoy and Thomas Fuchs, frontend
-gurus, entrepreneurs and developers of [Freckle time
-management](http://letsfreckle.com), among other things. I’ve helped
+<a href="http://slash7.com">Slash7</a> are Amy Hoy and Thomas Fuchs, frontend
+gurus, entrepreneurs and developers of <a href="http://letsfreckle.com">Freckle time tracking</a>, among other things. I’ve helped
 developing their soon-to-be-published customer support/help desk
-application [Charm Desk](http://charmde.sk).
+application <a href="http://charmde.sk">CharmDesk</a>.
 
 </p>
 </li>
@@ -95,7 +92,7 @@ Services: development
 </p>
 <p>
 
-[ReiseWoche](http://www.reisewoche.at) is an Austrian online
+<a href="http://www.reisewoche.at">ReiseWoche</a> is an Austrian online
 holiday/event magazine. I’ve developed the application with a heavy
 focus on search engine optimization (SEO) and a content-inclusion API
 for 3rd party sites.
@@ -118,7 +115,7 @@ Services: consulting, training/coaching
 </p>
 <p>
 
-[Avarteq](http://www.avarteq.de) is a web agency and hosting company.
+<a href="http://www.avarteq.de">Avarteq</a> is a web agency and hosting company.
 I’ve coached some of the developers in their great team in various areas
 of my expertise. I’m also regularly consulted for quality assurance and
 added to projects as a freelancer when in peak times.
@@ -141,12 +138,11 @@ Services: consulting
 </p>
 <p>
 
-[betterplace.org](http://betterplace.org) is an online fundraising
-platform, guaranteeing that [100% of all donations are passed on to the
-respective projects](http://www.betterplace.org/about_us). I’ve done
+<a href="http://betterplace.org">betterplace.org</a> is an online fundraising
+platform, guaranteeing that 100% of all donations are passed on to the
+respective projects. I’ve done
 consulting for them, helping them to migrate their Ruby Gettext-based
-internationalization to [Rails’ standard
-internationalization](http://github.com/svenfuchs/i18n).
+internationalization to <a href="http://github.com/svenfuchs/i18n">Ruby's standard i18n library</a>.
 
 </p>
 </li>
@@ -166,7 +162,7 @@ Services: development, consulting
 </p>
 <p>
 
-[abiagenten.de](http://abiagenten.de) is a community platform that helps
+<a href="http://abiagenten.de">abiagenten.de</a> is a community platform that helps
 German people manage their Abitur (high school graduation). I’ve written
 some of the administrative backend as well as the frontend calendar
 system and helped improve the testing strategy. In a separate project,
@@ -191,7 +187,7 @@ Services: development
 </p>
 <p>
 
-[bezirk-mödling.at](http://bezirk-mödling.at) is an event presentation
+<a href="http://bezirk-mödling.at">bezirk-mödling.at</a> is an event presentation
 platform for a district in Lower Austria. Among other things, it
 features an event calendar, heavily optimized search functions as well
 as powerful search engine optimization.
@@ -214,12 +210,11 @@ Services: development, consulting
 </p>
 <p>
 
-[bierher.at](http://bierher.at) is a drinks and snack delivery service
+<a href="http://bierher.at">bierher.at</a> is a drinks and snack delivery service
 franchise, based in Vienna, Austria. I’ve helped optimize their
 workflows, rewrote their shop system from scratch and added a powerful
 administrative interface. Special features include real-time multiuser
-distribution/logistics management powered by [Google
-Maps](http://maps.google.com), advanced inventory management,
+distribution/logistics management powered by <a href="http://maps.google.com">Google Maps</a>, advanced inventory management,
 specialized search functionalities and generally (then) fancy AJAX
 stuff.
 
@@ -241,7 +236,7 @@ Services: development
 </p>
 <p>
 
-[lesepartnerinnen.at](http://lesepartnerinnen.at) is a project sponsored
+<a href="http://lesepartnerinnen.at">lesepartnerinnen.at</a> is a project sponsored
 by the Austrian Ministry for Education for presenting schools’ reading
 projects. I’ve developed the project presentation pages. What made this
 project special was that my work had to be integrated with an existing
@@ -265,10 +260,10 @@ Services: development, consulting
 </p>
 <p>
 
-[power4youth.eu](http://power4youth.eu) was intended as a community
+<a href="http://power4youth.eu">power4youth.eu</a> was intended as a community
 platform for out-of-home-childcare by
-[Quality4Children](http://quality4children.info), a sub-organization of
-[SOS Children’s Villages](http://sos-childrensvillages.org). I’ve helped
+<a href="http://quality4children.info">Quality4Children</a>, a sub-organization of
+<a href="http://sos-childrensvillages.org">SOS Children's Villages</a>. I’ve helped
 with the conceptual design as well as developed the website. Sadly, the
 people responsible for the project left the company soon after the
 launch and the project has been in hibernation ever since.
@@ -283,8 +278,7 @@ launch and the project has been in hibernation ever since.
 </h3>
 <p>
 
-I have authored a couple of plugins in the [Rails
-internationalization](http://rails-i18n.org) sphere:
+I have authored a couple of plugins in the <a href="http://rails-i18n.org">Rails Internationalization</a> sphere:
 
 </p>
 <ul class="bullets">
@@ -296,7 +290,7 @@ LaterDude
 </h4>
 <p>
 
-[LaterDude](http://github.com/clemens/later_dude) is a Rails calendar
+<a href="http://github.com/clemens/later_dude">LaterDude</a> is a Rails calendar
 plugin with full internationalization support.
 
 </p>
@@ -309,7 +303,7 @@ delocalize
 </h4>
 <p>
 
-[delocalize](http://github.com/clemens/delocalize) is a plugin on top of
+<a href="http://github.com/clemens/delocalize">delocalize</a> is a plugin on top of
 Rails i18n that helps with parsing localized user input such as numbers
 and dates.
 
@@ -323,7 +317,7 @@ localized_dates
 </h4>
 <p>
 
-[localized_dates](http://github.com/clemens/localized_dates) is a plugin
+<a href="http://github.com/clemens/localized_dates">localized_dates</a> is a plugin
 to support better date/time localization in Rails.
 
 </p>
@@ -339,16 +333,15 @@ projects/plugins:
 <li>
 <h4>
 
-adva-cms
+adva_cms
 
 </h4>
 <p>
 
-[adva-cms](http://github.com/svenfuchs/adva_cms) is a generic,
+<a href="http://github.com/svenfuchs/adva_cms">adva_cms</a> is a generic,
 engine-based Content Management System. It sports a module-based
 approach (thanks to Rails Engines) and baked-in internationalization
-support. You can find more information on [the adva-cms
-website](http://adva-cms.org.</p>)
+support. You can find more information on <a href="http://adva-cms.org">adva_cms website</a>.</p>
 
 </li>
 <li>
@@ -359,8 +352,7 @@ i18n / Rails i18n
 </h4>
 <p>
 
-The [i18n gem](http://github.com/svenfuchs/i18n) as well as [Rails
-i18n](http://github.com/svenfuchs/rails-i18n) provides the core for
+The <a href="http://github.com/svenfuchs/i18n">i18n gem</a> as well as <a href="http://github.com/svenfuchs/rails-i18n">Rails i18n</a> provides the core for
 Rails’ internationalization and localization features.
 
 </p>
@@ -373,8 +365,8 @@ Steam
 </h4>
 <p>
 
-[Sven Fuchs](http://svenfuchs.com) and I wrote
-[Steam](http://github.com/svenfuchs/steam) while working on a
+<a href="http://svenfuchs.com">Sven Fuchs</a> and I wrote
+<a href="http://github.com/svenfuchs/steam">Steam</a> while working on a
 JavaScript-heavy application to support JavaScript-/AJAX-enabled
 full-stack integration testing.
 
@@ -388,10 +380,9 @@ Globalize2
 </h4>
 <p>
 
-[Globalize2](http://github.com/joshmh/globalize2) is the successor of
-the popular [Globalize](http://globalize-rails.com) internationalization
-plugin for Rails (before the advent of [Rails
-i18n](http://rails-i18n.org).</p>)
+<a href="http://github.com/joshmh/globalize2">Globalize2</a> is the successor of
+the popular <a href="http://globalize-rails.com">Globalize</a> internationalization
+plugin for Rails (before the advent of <a href="http://rails-i18n.org">Rails i18n</a>.</p>
 
 </li>
 <li>
@@ -403,9 +394,9 @@ Role-Based Access Control (RBAC)
 <p>
 
 When coming across the need for a better RBAC implementation for
-[adva-cms](http://adva-cms.org), [Sven Fuchs](http://svenfuchs.com) and
+<a href="http://adva-cms.org">adva_cms</a>, <a href="http://svenfuchs.com">Sven Fuchs</a> and
 I decided to write one from scratch. It’s probably the most generic
-piece of code I’ve ever written: In \< 500 lines of code we’ve
+piece of code I’ve ever written: In < 500 lines of code we’ve
 implemented just about everything we might need for adva-cms - which is
 a pretty complex system, mind you, so it should do just fine for almost
 every use case.
@@ -415,9 +406,8 @@ every use case.
 </ul>
 <p>
 
-Finally, I’ve contributed [a number of
-patches](http://contributors.rubyonrails.org/contributors/clemens-kofler/commits)
-for the [Ruby on Rails framework](http://rubyonrails.org.</p>)
+Finally, I’ve contributed <a href="http://contributors.rubyonrails.org/contributors/clemens-kofler/commits">a number of patches</a>
+for the <a href="http://rubyonrails.org">Ruby on Rails framework</a>.</p>
 
 </div>
 </div>
