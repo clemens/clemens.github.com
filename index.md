@@ -27,7 +27,9 @@ Latest posts
 <p style="margin-top:1em;">
 
 You can read all posts in my [blog](/blog) or subscribe to the [Atom
-Feed](/articles.atom.</p>)
+Feed](/articles.atom).
+
+</p>
 
 </div>
 </div>
@@ -48,14 +50,15 @@ Please wait while my tweets are loading
 <p>
 
 <a href="http://twitter.com/clemensk">If you can’t wait - check out what
-I’ve been twittering</a>
+I’ve been tweeting</a>
 
 </p>
 </div>
 <p>
 
-You can also [view my full stream and/or follow
-me](http://twitter.com/clemensk.</p>)
+You can also [view my full stream and/or follow me](http://twitter.com/clemensk).
+
+</p>
 
 </div>
 </div>
@@ -78,9 +81,9 @@ development-related services.
 <p style="margin-top:1em;">
 
 Read more [about me](/about) and check out [services I offer](/services)
-and my [rates](/rates). You can also take a look at [my
-portfolio](/portfolio) and read what [others are saying about me and my
-work](/praise.</p>)
+and my [rates](/rates). You can also take a look at [my portfolio]( portfolio) and read what [others are saying about me and my work](/praise).
+
+</p>
 
 </div>
 </div>
@@ -137,93 +140,77 @@ on Github:
 Archive
 
 </h2>
-<h3>
 
-2013
+### 2013
 
-</h3>
 <ul>
-
-{% for post in site.posts %}  
-{% if post.year  2013 %}
-          \<li\>\<span\>{{ post.date \| date: "%d.%m." }}\</span\> &raquo; \<a href="{{ post.url }}"\>{{ post.title }}\</a\>\</li\>
-        {% endif %}
-      {% endfor %}
-    \</ul\>
-    \<h3\>2012\</h3\>
-    \<ul\>
-      {% for post in site.posts %}
-        {% if post.year  2012 %}
-
-<li>
-
-<span>{{ post.date \| date: “%d.%m.” }}</span> »
-<a href="{{ post.url }}">{{ post.title }}</a>
-
-</li>
-
-{% endif %}  
-{% endfor %}
-
+  {% for post in site.posts %}  
+    {% if post.year == 2013 %}
+      <li><span>{{ post.date | date: "%d.%m." }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+  {% endfor %}
 </ul>
-<h3>
 
-2011
+### 2012
 
-</h3>
 <ul>
-
-{% for post in site.posts %}  
-{% if post.year  2011 %}
-          \<li\>\<span\>{{ post.date \| date: "%d.%m." }}\</span\> &raquo; \<a href="{{ post.url }}"\>{{ post.title }}\</a\>\</li\>
-        {% endif %}
-      {% endfor %}
-    \</ul\>
-    \<h3\>2010\</h3\>
-    \<ul\>
-      {% for post in site.posts %}
-        {% if post.year  2010 %}
-
-<li>
-
-<span>{{ post.date \| date: “%d.%m.” }}</span> »
-<a href="{{ post.url }}">{{ post.title }}</a>
-
-</li>
-
-{% endif %}  
-{% endfor %}
-
+  {% for post in site.posts %}  
+    {% if post.year == 2012 %}
+      <li><span>{{ post.date | date: "%d.%m." }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+  {% endfor %}
 </ul>
-<h3>
 
-2009
+### 2011
 
-</h3>
 <ul>
-
-{% for post in site.posts %}  
-{% if post.year  2009 %}
-          \<li\>\<span\>{{ post.date \| date: "%d.%m." }}\</span\> &raquo; \<a href="{{ post.url }}"\>{{ post.title }}\</a\>\</li\>
-        {% endif %}
-      {% endfor %}
-    \</ul\>
-    \<h3\>2008\</h3\>
-    \<ul\>
-      {% for post in site.posts %}
-        {% if post.year  2008 %}
-
-<li>
-
-<span>{{ post.date \| date: “%d.%m.” }}</span> »
-<a href="{{ post.url }}">{{ post.title }}</a>
-
-</li>
-
-{% endif %}  
-{% endfor %}
-
+  {% for post in site.posts %}  
+    {% if post.year == 2011 %}
+      <li><span>{{ post.date | date: "%d.%m." }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+  {% endfor %}
 </ul>
+
+### 2010
+
+<ul>
+  {% for post in site.posts %}  
+    {% if post.year == 2010 %}
+      <li><span>{{ post.date | date: "%d.%m." }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+### 2009
+
+<ul>
+  {% for post in site.posts %}  
+    {% if post.year == 2009 %}
+      <li><span>{{ post.date | date: "%d.%m." }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+### 2008
+
+<ul>
+  {% for post in site.posts %}  
+    {% if post.year == 2008 %}
+      <li><span>{{ post.date | date: "%d.%m." }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+### 2007
+
+<ul>
+  {% for post in site.posts %}  
+    {% if post.year == 2007 %}
+      <li><span>{{ post.date | date: "%d.%m." }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
 </div>
 </div>
 <script type="text/javascript" src="http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js">
