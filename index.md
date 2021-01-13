@@ -33,24 +33,14 @@ Feed](/articles.atom).
 
 </div>
 </div>
-<div id="twitter" class="content_box span-8 last">
-<div class="content_wrapper">
-<h2>
 
-Twitter
-
-</h2>
-<div id="tweets">
-<a class="twitter-timeline" href="https://twitter.com/clemensk?ref_src=twsrc%5Etfw">Tweets by clemensk</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div id="note" class="content_box span-8 last">
+  <div class="content_wrapper">
+    <h2>Important note</h2>
+    <p>As you might have noticed, I haven't updated this website in quite a while. My CV/main website is now at <a href="https://clemenskofler.com">https://clemenskofler.com</a>. I'm keeping this website up more for archiving purposes – so please don't expect any updates.</p>
+  </div>
 </div>
-<p>
 
-You can also [view my full stream and/or follow me](http://twitter.com/clemensk).
-
-</p>
-
-</div>
-</div>
 <div id="about" class="content_box span-12">
 <div class="content_wrapper">
 <h2>
