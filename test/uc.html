@@ -5,10 +5,14 @@
   <body>
     <p>Hi there!</p>
     
-    <script src="https://ssl.google-analytics.com/ga.js" type="text/plain"></script>
-    <script type="text/plain">
-      var pageTracker = _gat._getTracker("UA-5420575-1");
-      pageTracker._trackPageview();
+    <script type="text/plain" data-usercentrics="Google Analytics" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-5420575-1"></script>
+    <script type="text/plain" data-usercentrics="Google Analytics">
+
+      window.dataLayer = window.dataLayer || [] ;
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-5420575-1');
     </script>
   </body>
 </html>
