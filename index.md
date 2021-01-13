@@ -120,7 +120,7 @@ Archive
 
 </h2>
 
-### 2013
+<h3>2013</h3>
 
 <ul>
   {% for post in site.posts %}  
@@ -130,7 +130,7 @@ Archive
   {% endfor %}
 </ul>
 
-### 2012
+<h3>2012</h3>
 
 <ul>
   {% for post in site.posts %}  
@@ -140,7 +140,7 @@ Archive
   {% endfor %}
 </ul>
 
-### 2011
+<h3>2011</h3>
 
 <ul>
   {% for post in site.posts %}  
@@ -150,7 +150,7 @@ Archive
   {% endfor %}
 </ul>
 
-### 2010
+<h3>2010</h3>
 
 <ul>
   {% for post in site.posts %}  
@@ -160,7 +160,7 @@ Archive
   {% endfor %}
 </ul>
 
-### 2009
+<h3>2009</h3>
 
 <ul>
   {% for post in site.posts %}  
@@ -170,21 +170,11 @@ Archive
   {% endfor %}
 </ul>
 
-### 2008
+<h3>2008</h3>
 
 <ul>
   {% for post in site.posts %}  
     {% if post.year == 2008 %}
-      <li><span>{{ post.date | date: "%d.%m." }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endif %}
-  {% endfor %}
-</ul>
-
-### 2007
-
-<ul>
-  {% for post in site.posts %}  
-    {% if post.year == 2007 %}
       <li><span>{{ post.date | date: "%d.%m." }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endif %}
   {% endfor %}
