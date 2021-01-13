@@ -41,18 +41,7 @@ Twitter
 
 </h2>
 <div id="tweets">
-<p>
-
-Please wait while my tweets are loading
-<img src="/images/indicator.gif" />
-
-</p>
-<p>
-
-<a href="http://twitter.com/clemensk">If you can’t wait - check out what
-I’ve been tweeting</a>
-
-</p>
+<a class="twitter-timeline" href="https://twitter.com/clemensk?ref_src=twsrc%5Etfw">Tweets by clemensk</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 <p>
 
@@ -213,7 +202,3 @@ Archive
 
 </div>
 </div>
-<script type="text/javascript" src="http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js">
-</script>
-<script type="text/javascript" src="/javascripts/tweets.js">
-</script>
