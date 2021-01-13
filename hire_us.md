@@ -1,0 +1,24 @@
+---
+layout: default
+title: Hire us!
+---
+
+<div class="content_box span-24">
+<div class="content_wrapper">
+<h2>
+
+Available for hire!
+
+</h2>
+<p>
+
+We’re available for hire!
+
+</p>
+<p>
+
+Contact us at <a href="mailto:office@railway.at">office@railway.at</a>.
+
+</p>
+</div>
+</div>

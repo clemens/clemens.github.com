@@ -1,0 +1,50 @@
+---
+layout: default
+title: Imprint / Impressum
+---
+
+<div class="content_box span-24">
+<div class="content_wrapper">
+<h2>
+
+Imprint / Impressum
+
+</h2>
+<h3>
+
+English
+
+</h3>
+<p>
+
+Responsible for content:
+
+</p>
+<p>
+
+Clemens Kofler<br />  
+Innrain 19/10<br />  
+6020 Innsbruck<br />  
+Austria
+
+</p>
+<h3>
+
+Deutsch
+
+</h3>
+<p>
+
+Für den Inhalt verantwortlich:
+
+</p>
+<p>
+
+Clemens Kofler<br />  
+Innrain 19/10<br />  
+6020 Innsbruck<br />  
+Österreich
+
+</p>
+</div>
+</div>
