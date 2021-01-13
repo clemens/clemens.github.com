@@ -23,9 +23,9 @@ Responsible for content:
 <p>
 
 Clemens Kofler<br />  
-Innrain 19/10<br />  
-6020 Innsbruck<br />  
-Austria
+Freisinger Str. 4<br />  
+85764 Oberschleissheim<br />  
+Germany
 
 </p>
 <h3>
@@ -41,9 +41,9 @@ Für den Inhalt verantwortlich:
 <p>
 
 Clemens Kofler<br />  
-Innrain 19/10<br />  
-6020 Innsbruck<br />  
-Österreich
+Freisinger Str. 4<br />  
+85764 Oberschleißheim<br />  
+Deutschland
 
 </p>
 </div>
